@@ -19,6 +19,7 @@ router.post("/signup", (req,res)=> {
                             lastname: req.body.lastname
                         })
                         .then((user)=> {
+                            console.log(user)
                             req.session.user = user
                             res.send({user}); // sends back to the client user information
                         })
@@ -47,7 +48,7 @@ router.post("/login", (req,res)=> {
                     else if(!equal) res.send("Invalid password");
                     else {
                         req.session.user = user;
-                        res.redirect("/movies");
+                        res.send(user);
                     }
                 });
             }

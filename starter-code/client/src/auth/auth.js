@@ -25,7 +25,7 @@ export const signup = function({username, password, firstname, lastname, email})
             url: "/auth/signup",
             baseURL: this.domain,
             headers: { 'content-type': 'application/x-www-form-urlencoded' },
-            data: qs.stringify({username, firstname, lastname, password, email}),
+            data: qs.stringify({username, password, firstname, lastname, email}),
         })
         .then((response)=> {
             this.setUser(response.data);
@@ -50,7 +50,7 @@ export const logout = function(){
             baseURL: this.domain,
             url: "/auth/logout"
         })
-        .then((res)=> {
+        .then((response)=> {
             localStorage.removeItem('user');
         })
     }    

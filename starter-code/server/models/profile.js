@@ -8,8 +8,8 @@ const profileSchema = new Schema({
   location: String,
   degree: String, 
   skills: [String],
-  financing: ?, 
-  timing: ?,
+  financing: String, 
+  timing: String,
   summary: String, 
   picture: String, 
   portfolio: {
@@ -17,7 +17,7 @@ const profileSchema = new Schema({
       experience: String, 
       accomplishments: String,
       samples: String, 
-      reference: String,
+      references: String,
   }
 });
 
