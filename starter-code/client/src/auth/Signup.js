@@ -46,7 +46,6 @@ export default class Signup extends Component {
    render() {
        return (
            <>
-               <Nav />
                <div>
                    <form onSubmit={this.handleSubmit}>
                        <input onChange={this.handleChange} value={this.state.username} placeholder="username" type="text" name="username"/>

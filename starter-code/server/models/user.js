@@ -4,9 +4,9 @@ const Schema   = mongoose.Schema;
 const userSchema = new Schema({
   username: String,
   password: String,
-  email: String, 
   firstname: String, 
   lastname: String,
+  email: String, 
 }, {
   timestamps: true
 });
