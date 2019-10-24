@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import qs from "qs";
+import { Link } from "react-router-dom";
 
 import ExamplesNavbar from "auth/ExamplesNavbar.js";
-import TransparentFooter from "auth/TransparentFooter.js";
+// import TransparentFooter from "auth/TransparentFooter.js";
 
 import 'assets/css/bootstrap.min.css'
 import 'assets/css/bootstrap.min.css.map'
@@ -74,25 +75,25 @@ export default class Login extends Component {
           <>
        <ExamplesNavbar />
        <div className="page-header clear-filter" filter-color="blue">
-         {/* <div
+         <div
            className="page-header-image"
            style={{
              backgroundImage: "url(" + require("assets/img/login.jpg") + ")"
            }}
-         ></div> */}
-         <div className="content">
+         ></div>
+         <div className="all">
+          <div>
+            <p className='roister-name'>ROISTER</p>
+          </div>
+          <div>
+            <p className='roister-para'>Welcome to the world's most innovative network of entrepreneurs</p>
+          </div>
            <Container>
             <Col className="ml-auto mr-auto" md="4">
                <Card className="card-login card-plain">
-                 <Form action="" className="form" method="">
-                   <CardHeader className="text-center">
-                     <div className="logo-container">
-                       <img
-                        alt="..."
-                        src={require("assets/img/now-logo.png")}
-                      ></img>
-                    </div>
-                  </CardHeader>
+
+                 <Form action="" className="form" method="">                 
+  
                   <CardBody>
                   <form onSubmit={this.handleSubmit}>
                     <InputGroup
@@ -129,7 +130,7 @@ export default class Login extends Component {
                   </CardBody>
                   <CardFooter className="text-center">
                     <Button
-                      type="submit"
+                      
                       block
                       className="btn-round"
                       color="info"
@@ -141,20 +142,18 @@ export default class Login extends Component {
                     </Button>
                     <div className="pull-left">
                       <h6>
-                        <a
-                          className="link"
-                          href="#pablo"
-                          onClick={e => e.preventDefault()}
+                        <Link to={"/Signup"}
+                          className="link1"                        
                         >
-                          Create Account
-                        </a>
+                          Create Account  
+                        </Link>
                       </h6>
                     </div>
                     <div className="pull-right">
                       <h6>
                         <a
-                          className="link"
-                          href="#pablo"
+                          className="link1"
+                          href="#login"
                           onClick={e => e.preventDefault()}
                         >
                           Need Help?
@@ -167,7 +166,7 @@ export default class Login extends Component {
             </Col>
           </Container>
         </div>
-        <TransparentFooter />
+        {/* <TransparentFooter /> */}
       </div>
     </>
        )

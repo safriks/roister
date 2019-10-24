@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 import 'assets/css/bootstrap.min.css'
 import 'assets/css/bootstrap.min.css.map'
 import 'assets/css/now-ui-kit.css'
 import 'assets/css/now-ui-kit.css.map'
 import 'assets/css/now-ui-kit.min.css'
 
-// reactstrap components
 import {
   Collapse,
   DropdownToggle,
@@ -99,7 +99,7 @@ function ExamplesNavbar() {
               target="_blank"
               id="navbar-brand"
             >
-              Now Ui Kit
+              MENU
             </NavbarBrand>
             <UncontrolledTooltip target="#navbar-brand">
               
@@ -125,13 +125,13 @@ function ExamplesNavbar() {
           >
             <Nav navbar>
               <NavItem>
-                <NavLink to="/index" tag={Link}>
-                  Back to Kit
+                <NavLink to="" tag={Link}>
+                  CONTACT
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/creativetimofficial/now-ui-kit-react/issues?ref=creativetim">
-                  Have an issue?
+                <NavLink href="">
+                  ABOUT
                 </NavLink>
               </NavItem>
               <NavItem>

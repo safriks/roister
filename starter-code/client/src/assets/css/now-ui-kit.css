@@ -741,7 +741,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   border-bottom: 7px solid transparent;
   border-top: 0;
   border-bottom-color: rgba(0, 0, 0, 0.2);
-  position: absolute; }
+  position: absolute; 
+  margin-top: -10px }
 
 .datepicker-dropdown:after {
   content: '';
@@ -2790,6 +2791,7 @@ Created using IcoMoon - icomoon.io
   font: normal normal normal 14px/1 'Nucleo Outline';
   font-size: inherit;
   speak: none;
+  margin-right: 10px;
   text-transform: none;
   /* Better Font Rendering */
   -webkit-font-smoothing: antialiased;
@@ -3189,6 +3191,36 @@ Created using IcoMoon - icomoon.io
   color: #B8B8B8;
   padding: 0 10px;
   font-size: 0.7142em; }
+
+.link1{
+  color: white;
+}
+
+.roister-name{
+  font-size: 130px;
+  margin-bottom: -25px;
+  width: 100vw;
+  text-align: center;
+}
+
+.roister-para{
+  font-size: 30px;
+  text-align: center;
+}
+
+.all{
+  margin-top: 80px;
+}
+
+.signup-container{
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 25vw;
+  margin-right: 25vw;
+}
 
 .nav-tabs {
   border: 0;
@@ -4219,7 +4251,12 @@ img {
   height: 100vh; }
 
 .section-signup {
-  padding-top: 20vh; }
+  padding-top: 20vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+ }
 
 .page-header {
   min-height: 100vh;
