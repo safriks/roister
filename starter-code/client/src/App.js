@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
 import Login from "./auth/Login";
 import Signup from "./auth/Signup";
+import LandingPage from "./LandingPage/LandingPage.js";
 import {Route} from 'react-router-dom';
+
 // import axios from "axios";
 
 
@@ -28,11 +29,11 @@ class App extends Component {
         <header className="App-header">
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Signup" component={Signup} />
-        </header>
+            <Route exact path="/Landing-page" component={LandingPage} />
+          </header>
       </div>
     );
   }
 }
-
 
 export default App;
