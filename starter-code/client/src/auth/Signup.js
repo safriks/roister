@@ -10,16 +10,15 @@ import 'assets/css/now-ui-kit.min.css'
 export default class Signup extends Component {
    constructor(props){
        super(props);
+       this.state = {
+        username: "",
+        firstname: "",
+        lastname: "",
+        email: "",
+        password: ""
+    }
        this.handleChange = this.handleChange.bind(this);
        this.handleSubmit = this.handleSubmit.bind(this);
-   }
-
-   state = {
-       username: "",
-       firstname: "",
-       lastname: "",
-       email: "",
-       password: ""
    }
 
    handleChange(e) {
@@ -33,7 +32,7 @@ export default class Signup extends Component {
        axios({
            method: "POST",
            data: qs.stringify(this.state),
-           url: "https://localhost:3001/auth/signup",
+           url: `${process.env.REACT_APP_API}/auth/signup`,
            headers: {
                'Content-Type': 'application/x-www-form-urlencoded'
            }
@@ -41,7 +40,7 @@ export default class Signup extends Component {
        .then((response)=> {
            debugger
            localStorage.setItem('user', JSON.stringify(response.data));
-           this.props.history.push("/")
+           this.props.history.push("/Login")
        })
        .catch((error)=> {
            debugger
@@ -51,7 +50,6 @@ export default class Signup extends Component {
    render() {
        return (
            <>
-               
                <div>
                    <form onSubmit={this.handleSubmit}>
                        <input onChange={this.handleChange} value={this.state.username} placeholder="username" type="text" name="username"/>

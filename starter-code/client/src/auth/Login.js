@@ -49,7 +49,7 @@ export default class Login extends Component {
        axios({
            method: "POST",
            data: qs.stringify(this.state),
-           url: "https://localhost:3001/auth/signup",
+           url: `${process.env.REACT_APP_API}/auth/login`,
            headers: {
                'Content-Type': 'application/x-www-form-urlencoded'
            }
