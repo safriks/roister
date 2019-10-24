@@ -15,7 +15,7 @@ const cors = require('cors')
 const app = express();
 app.use(express.static('uploads'));
 
-const app_name = require('./package.json.js').name;
+const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 mongoose.connect('mongodb://localhost/roister', {useNewUrlParser: true})

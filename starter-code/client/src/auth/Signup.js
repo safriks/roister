@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import qs from "qs";
+import 'assets/css/bootstrap.min.css'
+import 'assets/css/bootstrap.min.css.map'
+import 'assets/css/now-ui-kit.css'
+import 'assets/css/now-ui-kit.css.map'
+import 'assets/css/now-ui-kit.min.css'
 
 export default class Signup extends Component {
    constructor(props){
@@ -46,7 +51,7 @@ export default class Signup extends Component {
    render() {
        return (
            <>
-               <Nav />
+               
                <div>
                    <form onSubmit={this.handleSubmit}>
                        <input onChange={this.handleChange} value={this.state.username} placeholder="username" type="text" name="username"/>
