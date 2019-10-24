@@ -74,12 +74,12 @@ export default class Login extends Component {
           <>
        <ExamplesNavbar />
        <div className="page-header clear-filter" filter-color="blue">
-         <div
+         {/* <div
            className="page-header-image"
            style={{
              backgroundImage: "url(" + require("assets/img/login.jpg") + ")"
            }}
-         ></div>
+         ></div> */}
          <div className="content">
            <Container>
             <Col className="ml-auto mr-auto" md="4">
@@ -94,6 +94,7 @@ export default class Login extends Component {
                     </div>
                   </CardHeader>
                   <CardBody>
+                  <form onSubmit={this.handleSubmit}>
                     <InputGroup
                       className={
                         "no-border input-lg" 
@@ -103,8 +104,9 @@ export default class Login extends Component {
                         <InputGroupText>
                           <i className="now-ui-icons users_circle-08"></i>
                         </InputGroupText>
+                        
                       </InputGroupAddon>
-                     
+                      
                       <Input onChange={this.handleChange} value={this.state.username} placeholder="username" type="text" name="username"/>
 
                       
@@ -119,16 +121,19 @@ export default class Login extends Component {
                           <i className="now-ui-icons text_caps-small"></i>
                         </InputGroupText>
                       </InputGroupAddon>
+                      
                       <Input onChange={this.handleChange} value={this.state.password} placeholder="password"  type="password" name="password"/>
 
                     </InputGroup>
+                    </form>
                   </CardBody>
                   <CardFooter className="text-center">
                     <Button
+                      type="submit"
                       block
                       className="btn-round"
                       color="info"
-                       href="#pablo"
+                      href="#login"
                       onClick={e => e.preventDefault()}
                       size="lg"
                     >
