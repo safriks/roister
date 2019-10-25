@@ -59,7 +59,7 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 app.use(cors())
 app.use('/', require('./routes/auth'));
-app.use('/', require('./routes/landing-page'));
+// app.use('/', require('./routes/landing-page'));
 // app.use('/', require('./routes/profile'));
 
 

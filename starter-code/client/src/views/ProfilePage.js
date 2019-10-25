@@ -64,6 +64,39 @@ function ProfilePage() {
                 Follow me on Instagram
               </UncontrolledTooltip>
             </div>
+            <div
+        className="page-header clear-filter page-header-small"
+        filter-color="blue"
+      >
+        <div
+          className="page-header-image"
+          style={{
+            backgroundImage: "url(" + require("assets/img/bg5.jpg") + ")"
+          }}
+          ref={pageHeader}
+        ></div>
+        <Container>
+          <div className="photo-container">
+            <img alt="..." src={require("assets/img/ryan.jpg")}></img>
+          </div>
+          <h3 className="title">Ryan Scheinder</h3>
+          <p className="category">Photographer</p>
+          <div className="content">
+            <div className="social-description">
+              <h2>26</h2>
+              <p>Comments</p>
+            </div>
+            <div className="social-description">
+              <h2>26</h2>
+              <p>Comments</p>
+            </div>
+            <div className="social-description">
+              <h2>48</h2>
+              <p>Bookmarks</p>
+            </div>
+          </div>
+        </Container>
+      </div>
             <h3 className="title">About me</h3>
             <h5 className="description">
               An artist of considerable range, Ryan — the name taken by
