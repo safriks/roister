@@ -14,7 +14,6 @@ import {
   Button,
   Card,
   CardHeader,
-  CardBody,
   CardFooter,
   CardTitle,
   Form,
@@ -22,7 +21,6 @@ import {
   InputGroupAddon,
   InputGroupText,
   InputGroup,
-  Container,
   Row
 } from "reactstrap";
 

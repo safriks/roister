@@ -1,10 +1,10 @@
 const express = require('express');
 const router  = express.Router();
 
-/* GET home page */
+/* GET landing page */
 router.get('/', (req, res) => {
   console.log(req.session)
-  res.render('index');
+  res.render('landing-page');
 });
 
 module.exports = router;

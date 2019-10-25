@@ -36,9 +36,13 @@ class App extends Component {
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Signup" component={Signup} />
+<<<<<<< HEAD
+            <Route exact path="/" component={LandingPage} />
+=======
             <Route exact path="/Profile" component={Profile} />
             <Route exact path="/Create" component={CreateProfile} />
             <Route exact path="/icons" component={NucleoIcons} />
+>>>>>>> 654ac84d691f90aa52c244cba424a8be08602f7d
           </header>
       </div>
     );

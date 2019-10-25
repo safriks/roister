@@ -17,7 +17,7 @@ function TransparentFooter() {
           <ul>
             <li>
               <a
-                href=""
+                href="/"
                 target="_blank"
               >
                 Contact Us
@@ -33,7 +33,7 @@ function TransparentFooter() {
             </li>
             <li>
               <a
-                href=""
+                href="/"
                 target="_blank"
               >
                 About Us

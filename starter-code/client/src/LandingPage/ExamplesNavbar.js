@@ -1,13 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 // reactstrap components
 import {
   Collapse,
+  Button,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
-  NavbarBrand,
   Navbar,
   NavItem,
   NavLink,
@@ -76,16 +75,13 @@ function ExamplesNavbar() {
             </DropdownMenu>
           </UncontrolledDropdown>
           <div className="navbar-translate">
-            <NavbarBrand
-              href="/landing-page"
-              target="_blank"
-              id="navbar-brand"
-            >
-              Roister
-            </NavbarBrand>
-            <UncontrolledTooltip target="#navbar-brand">
-              Designed by Invision. Coded by Creative Tim
-            </UncontrolledTooltip>
+            <Button 
+            href="/login" 
+            target="_blank"
+            id="navbar-brand"
+            color="primary">
+            Roister
+            </Button>
             <button
               className="navbar-toggler navbar-toggler"
               onClick={() => {
@@ -106,14 +102,19 @@ function ExamplesNavbar() {
             navbar
           >
             <Nav navbar>
+            <NavItem>
+                <NavLink href="/login">
+                  Logout
+                </NavLink>
+              </NavItem>
               <NavItem>
-                <NavLink to="/landing-page" tag={Link}>
+                <NavLink href="/">
                   Contact
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/landing-page">
-                  About
+                <NavLink href="/">
+                  About Us
                 </NavLink>
               </NavItem>
               <NavItem>

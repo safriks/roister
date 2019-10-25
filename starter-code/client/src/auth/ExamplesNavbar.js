@@ -1,28 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {getUser} from "../auth/auth";
 
-import 'assets/css/bootstrap.min.css'
-import 'assets/css/bootstrap.min.css.map'
-import 'assets/css/now-ui-kit.css'
-import 'assets/css/now-ui-kit.css.map'
-import 'assets/css/now-ui-kit.min.css'
-
+// reactstrap components
 import {
   Collapse,
-  DropdownToggle,
+  Button,
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
-  NavbarBrand,
   Navbar,
   NavItem,
   NavLink,
   Nav,
   Container,
-  UncontrolledTooltip
 } from "reactstrap";
 
 function ExamplesNavbar() {
+  var user = getUser();
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   React.useEffect(() => {
@@ -46,7 +40,8 @@ function ExamplesNavbar() {
   });
   return (
     <>
-      {collapseOpen ? (
+      {collapseOpen
+      ? (
         <div
           id="bodyClick"
           onClick={() => {
@@ -54,22 +49,11 @@ function ExamplesNavbar() {
             setCollapseOpen(false);
           }}
         />
-      ) : null}
+      ) 
+      : null}
       <Navbar className={"fixed-top " + navbarColor} color="info" expand="lg">
         <Container>
           <UncontrolledDropdown className="button-dropdown">
-            <DropdownToggle
-              caret
-              data-toggle="dropdown"
-              href="#pablo"
-              id="navbarDropdown"
-              tag="a"
-              onClick={e => e.preventDefault()}
-            >
-              <span className="button-bar"></span>
-              <span className="button-bar"></span>
-              <span className="button-bar"></span>
-            </DropdownToggle>
             <DropdownMenu aria-labelledby="navbarDropdown">
               <DropdownItem header tag="a">
                 Dropdown header
@@ -94,16 +78,13 @@ function ExamplesNavbar() {
             </DropdownMenu>
           </UncontrolledDropdown>
           <div className="navbar-translate">
-            <NavbarBrand
-              href="https://demos.creative-tim.com/now-ui-kit-react/index?ref=nukr-examples-navbar"
-              target="_blank"
-              id="navbar-brand"
-            >
-              MENU
-            </NavbarBrand>
-            <UncontrolledTooltip target="#navbar-brand">
-              
-            </UncontrolledTooltip>
+            <Button 
+            href="/login" 
+            target="_blank" 
+            id="navbar-brand" 
+            color="primary">
+            Roister
+            </Button>
             <button
               className="navbar-toggler navbar-toggler"
               onClick={() => {
@@ -124,55 +105,93 @@ function ExamplesNavbar() {
             navbar
           >
             <Nav navbar>
-              <NavItem>
-                <NavLink to="" tag={Link}>
-                  CONTACT
+            <>{user 
+            ? <><NavItem>
+                <NavLink href="/">
+                  Contact
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="">
-                  ABOUT
+                <NavLink href="/">
+                  About Us
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="https://twitter.com/CreativeTim?ref=creativetim"
+                  href="https://twitter.com/"
                   target="_blank"
                   id="twitter-tooltip"
                 >
                   <i className="fab fa-twitter"></i>
                   <p className="d-lg-none d-xl-none">Twitter</p>
                 </NavLink>
-                <UncontrolledTooltip target="#twitter-tooltip">
-                  Follow us on Twitter
-                </UncontrolledTooltip>
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="https://www.facebook.com/CreativeTim?ref=creativetim"
+                  href="https://www.facebook.com/"
                   target="_blank"
                   id="facebook-tooltip"
                 >
                   <i className="fab fa-facebook-square"></i>
                   <p className="d-lg-none d-xl-none">Facebook</p>
                 </NavLink>
-                <UncontrolledTooltip target="#facebook-tooltip">
-                  Like us on Facebook
-                </UncontrolledTooltip>
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
+                  href="https://www.instagram.com/"
                   target="_blank"
                   id="instagram-tooltip"
                 >
                   <i className="fab fa-instagram"></i>
                   <p className="d-lg-none d-xl-none">Instagram</p>
                 </NavLink>
-                <UncontrolledTooltip target="#instagram-tooltip">
-                  Follow us on Instagram
-                </UncontrolledTooltip>
+              </NavItem></>
+            : <><NavItem>
+                <NavLink href="/login">
+                  Logout
+                </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink href="/">
+                  Contact
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/">
+                  About Us
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  href="https://twitter.com/"
+                  target="_blank"
+                  id="twitter-tooltip"
+                >
+                  <i className="fab fa-twitter"></i>
+                  <p className="d-lg-none d-xl-none">Twitter</p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  id="facebook-tooltip"
+                >
+                  <i className="fab fa-facebook-square"></i>
+                  <p className="d-lg-none d-xl-none">Facebook</p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  id="instagram-tooltip"
+                >
+                  <i className="fab fa-instagram"></i>
+                  <p className="d-lg-none d-xl-none">Instagram</p>
+                </NavLink>
+              </NavItem></>
+            }</>
             </Nav>
           </Collapse>
         </Container>

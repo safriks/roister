@@ -32,10 +32,6 @@ export const signup = function({username, password, firstname, lastname, email})
         })
     }
 
-export const loggedIn = function(){
-        const user = this.getUser()
-        return !!user; 
-    }
 
 export const setUser = function(user){
         localStorage.setItem('user', JSON.stringify(user));
@@ -43,6 +39,11 @@ export const setUser = function(user){
 
 export const getUser = function(){
         return JSON.parse(localStorage.getItem('user'));
+    }
+
+export const loggedIn = function(){
+        const user = getUser()
+        return !!user; 
     }
 
 export const logout = function(){
