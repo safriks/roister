@@ -12,7 +12,7 @@ function TransparentFooter() {
           <ul>
             <li>
               <a
-                href="/landing-page"
+                href="/"
                 target="_blank"
               >
                 About Us
@@ -20,7 +20,7 @@ function TransparentFooter() {
             </li>
             <li>
               <a
-                href="/landing-page"
+                href="/"
                 target="_blank"
               >
                 Contact

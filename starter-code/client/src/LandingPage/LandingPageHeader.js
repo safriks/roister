@@ -33,7 +33,7 @@ function Home() {
         ></div>
         <div className="content-center">
           <Container>
-            <h1 className="title">ROISTER</h1>
+            <h1 className="title">ABOUT ROISTER</h1>
             <p>Welcome to the world's most innovative network of entrepreneurs</p>
             <div className="text-center">
             </div>

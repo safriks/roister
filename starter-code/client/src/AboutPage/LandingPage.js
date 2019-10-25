@@ -18,8 +18,8 @@ import {
 } from "reactstrap";
 
 // core components
-import ExamplesNavbar from "./ExamplesNavbar.js";
-import LandingPageHeader from "./LandingPageHeader.js";
+import ExamplesNavbar from "./ExamplesNavbar.js.js";
+import AboutPageHeader from "./LandingPageHeader.js/index.js.js";
 import TransparentFooter from "./TransparentFooter.js";
 
 function LandingPage() {
@@ -96,10 +96,10 @@ function LandingPage() {
                     <img
                       alt="..."
                       className="rounded-circle img-fluid img-raised"
-                      src={require("../assets/img/Tommi.jpeg")}
+                      src={require("../assets/img/avatar.jpg")}
                     ></img>
-                    <h4 className="title">Tommi Lahtinen</h4>
-                    <p className="category text-info">Founder</p>
+                    <h4 className="title">Romina Hadid</h4>
+                    <p className="category text-info">Model</p>
                     <p className="description">
                       You can write here details about one of your team members.
                       You can give more details about what they do. Feel free to

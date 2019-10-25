@@ -29,7 +29,7 @@ class App extends Component {
         <header>
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Signup" component={Signup} />
-            <Route exact path="/Landing-page" component={LandingPage} />
+            <Route exact path="/" component={LandingPage} />
           </header>
       </div>
     );

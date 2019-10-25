@@ -72,7 +72,6 @@ import {
   Button,
   Card,
   CardHeader,
-  CardBody,
   CardFooter,
   CardTitle,
   Form,
@@ -80,7 +79,6 @@ import {
   InputGroupAddon,
   InputGroupText,
   InputGroup,
-  Container,
   Row
 } from "reactstrap";
 
@@ -198,7 +196,7 @@ function SignUp() {
                   <Button
                     className="btn-neutral btn-round"
                     color="info"
-                    href="#pablo"
+                    href="/"
                     onClick={e => e.preventDefault()}
                     size="lg"
                   >
