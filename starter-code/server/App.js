@@ -1,4 +1,7 @@
 require('dotenv').config();
+require('./models/user');
+require('./models/profile');
+require('./models/project');
 
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -56,6 +59,9 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 app.use(cors())
 app.use('/', require('./routes/auth'));
+app.use('/', require('./routes/landing-page'));
+// app.use('/', require('./routes/profile'));
+
 
 module.exports = app;
 
