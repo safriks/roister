@@ -18,8 +18,9 @@ export default class Profile extends Component {
         })
         .then((response)=> {
             var stateStringify = JSON.stringify(this.state); 
+            var stateCopy = JSON.parse(stateStringify);
 
-            stateCopy.profile = response.data;
+            stateCopy.beer = response.data;
             stateCopy.loading = false;
             this.setState(stateCopy);
         })
@@ -53,7 +54,7 @@ export default class Profile extends Component {
                 }
                 {this.state.error ? 
                     this.state.error:
-                    ""
+                    "Error"
                 }
             </div>
         )

@@ -56,6 +56,7 @@ export default class Login extends Component {
            }
        })
        .then((response)=> {
+
             response.data === "Invalid credentials"
             ? this.setState({errorMessage: response.data}) 
             : this.handleResponse(response)
@@ -156,4 +157,3 @@ export default class Login extends Component {
        )
    }
 }
-
