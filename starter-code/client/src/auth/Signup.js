@@ -77,9 +77,9 @@ export default class Signup extends Component {
         >
         <div className='signup-container'>
           <Row>
-            <Card className="className='form-container-signup'" data-background-color="blue">
+            <Card className="form-container-signup" data-background-color="blue">
               <form onSubmit={this.handleSubmit}>
-              
+              <div className='form-all'>
                 <CardHeader className="text-center">
                   <CardTitle className="title-up" tag="h3">Sign Up</CardTitle>
                   <div className="social-line">
@@ -111,11 +111,14 @@ export default class Signup extends Component {
                   </div>
                 </CardHeader>
 
-                <div>
-                    <InputGroupAddon addonType="prepend">
+                <div class='signup-form'>
+
+                    <InputGroupAddon className='inputs-signin' addonType="prepend">
+                    <div className='input-space'> 
                       <InputGroupText>
                         <i className="now-ui-icons users_circle-08"></i>
                       </InputGroupText>
+                      </div>
                     <Input
                       onChange={this.handleChange} 
                       value={this.state.firstname} 
@@ -125,10 +128,12 @@ export default class Signup extends Component {
                     ></Input> 
                     </InputGroupAddon>  
 
-                    <InputGroupAddon addonType="prepend">
+                    <InputGroupAddon className='inputs-signin' addonType="prepend">
+                    <div className='input-space'> 
                       <InputGroupText>
                         <i className="now-ui-icons text_caps-small"></i>
-                      </InputGroupText>                   
+                      </InputGroupText>   
+                      </div>                
                     <Input
                       onChange={this.handleChange} 
                       value={this.state.lastname} 
@@ -138,10 +143,12 @@ export default class Signup extends Component {
                     ></Input>   
                     </InputGroupAddon> 
            
-                    <InputGroupAddon addonType="prepend">
+                    <InputGroupAddon className='inputs-signin' addonType="prepend">                   
+                      <div className='input-space'> 
                       <InputGroupText>
                         <i className="now-ui-icons ui-1_email-85"></i>
-                      </InputGroupText>                   
+                      </InputGroupText>    
+                      </div>               
                     <Input
                       onChange={this.handleChange} 
                       value={this.state.email} 
@@ -151,10 +158,12 @@ export default class Signup extends Component {
                     ></Input>     
                     </InputGroupAddon>     
 
-                    <InputGroupAddon addonType="prepend">
-                      <InputGroupText>
+                    <InputGroupAddon className='inputs-signin' addonType="prepend">
+                    <div className='input-space'> 
+                      <InputGroupText>                     
                         <i className="now-ui-icons users_single-02"></i>
-                      </InputGroupText>                   
+                      </InputGroupText>          
+                      </div>          
                     <Input
                       onChange={this.handleChange} 
                       value={this.state.username} 
@@ -164,10 +173,12 @@ export default class Signup extends Component {
                     ></Input>   
                     </InputGroupAddon>  
 
-                    <InputGroupAddon addonType="prepend">
+                    <InputGroupAddon className='inputs-signin' addonType="prepend">
+                    <div className='input-space'>  
                       <InputGroupText>
                         <i className="now-ui-icons objects_key-25"></i>
-                      </InputGroupText>                   
+                      </InputGroupText>   
+                        </div>         
                     <Input
                       onChange={this.handleChange} 
                       value={this.state.password} 
@@ -175,18 +186,21 @@ export default class Signup extends Component {
                       type="password" 
                       name="password"                     
                     ></Input> 
+                     
                     </InputGroupAddon>              
                 </div>
                 <CardFooter className="text-center">
-                  <Button
+                  <button
+                    type='submit'
                     className="btn-neutral btn-round"
                     color="info"
                     type= 'submit'
                     size="lg"
                   >
                     Get Started
-                  </Button>
+                  </button>
                 </CardFooter>
+                </div>
               </form>
             </Card>
           </Row>
