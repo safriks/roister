@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from "axios";
 
-export default class Profile extends Component {
+export default class Project extends Component {
 
     state = {
         loading: true,
@@ -10,10 +10,10 @@ export default class Profile extends Component {
     }
 
     componentDidMount(){
-        let profileId = this.props.match.params.profileId
+        let projectId = this.props.match.params.projectId
 
         axios({
-            url: `${process.env.REACT_APP_API}}/${profileId}`,
+            url: `${process.env.REACT_APP_API}}/${projectId}`,
             method: "GET"
         })
         .then((response)=> {
@@ -39,17 +39,15 @@ export default class Profile extends Component {
                 {this.state.loading ? 
                     <img src="/loading.gif" alt=""/>:
                     <>
-                        <h3>{this.state.profile.firstname}</h3>
-                        <h3>{this.state.profile.lastname}</h3>
-                        <h3>{this.state.profile.username}</h3>
+                        <h3>{this.state.profile.name}</h3>
                         <h3>{this.state.profile.location}</h3>
-                        <h3>{this.state.profile.degree}</h3>
-                        <p>{this.state.profile.skills}</p>
-                        <h3>{this.state.profile.financing}</h3>
+                        <h3>{this.state.profile.tagline}</h3>
+                        <h3>{this.state.profile.description}</h3>
+                        <h3>{this.state.profile.tags}</h3>
+                        <p>{this.state.profile.financing}</p>
                         <h3>{this.state.profile.timing}</h3>
-                        <p>{this.state.profile.summary}</p>
+                        <h3>{this.state.profile.team}</h3>
                         <p>{this.state.profile.picture}</p>
-                        <p>{this.state.profile.portfolio}</p>
                     </>
                 }
                 {this.state.error ? 

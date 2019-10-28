@@ -3,10 +3,7 @@ import axios from "axios";
 
 import {
     Button,
-    NavItem,
-    NavLink,
     Nav,
-    TabContent,
     TabPane,
     Container,
     Row,
@@ -14,11 +11,10 @@ import {
     UncontrolledTooltip
   } from "reactstrap";
 
- import ExamplesNavbar from "auth/ExamplesNavbar.js";
+ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
  import DefaultFooter from "components/Footers/DefaultFooter.js";
 
 export default class CreateProfile extends Component {
-
     constructor(props){
         super(props);
         this.handleChange = this.handleChange.bind(this);
@@ -69,22 +65,6 @@ handleSubmit(e) {
 
 render(){
     return(           
-    //   <div className='form'>
-    //   <form onSubmit={this.handleSubmit}>
-    //     <input onChange={this.handleChange} value={this.state.firstname} placeholder="firstname" type="text" name="firstname"/>
-    //     <input onChange={this.handleChange} value={this.state.lastname} placeholder="lastname" type="text" name="lastname"/>
-    //     <input onChange={this.handleChange} value={this.state.username} placeholder="username" type="text" name="username"/>
-    //     <input onChange={this.handleChange} value={this.state.location} placeholder="location"  type="text" name="location"/>
-    //     <input onChange={this.handleChange} value={this.state.degree} placeholder="degree" type="text" name="degree"/>
-    //     <input onChange={this.handleChange} value={this.state.skills} placeholder="skills" type="text" name="skills"/>
-    //     <input onChange={this.handleChange} value={this.state.financing} placeholder="financing" type="text" name="financing"/>
-    //     <input onChange={this.handleChange} value={this.state.timing}  placeholder="timing" type="text" name="timing"/>
-    //     <input onChange={this.handleChange} value={this.state.summary}  placeholder="summary" type="text" name="summary"/>
-    //     <input onChange={this.handleChange} value={this.state.picture}  placeholder="picture" type="text" name="picture"/>
-    //     <input onChange={this.handleChange} value={this.state.portfolio}  placeholder="portfolio" type="text" name="portfolio"/>
-    //     <button onChange={this.handleChange} type="submit">Submit </button>
-    //   </form>
-    //   </div>
     <>
     <ExamplesNavbar />
     <div className="wrapper">
@@ -192,137 +172,35 @@ render(){
                   pills
                   role="tablist"
                 >
-                  <NavItem>
-                    {/* <NavLink
-                      className={pills === "1" ? "active" : ""}
-                      href="#pablo"
-                      onClick={e => {
-                        e.preventDefault();
-                        setPills("1");
-                      }}
-                    > */}
-                      <i className="now-ui-icons design_image"></i>
-                    {/* </NavLink> */}
-                  </NavItem>
-                  <NavItem>
-                    {/* <NavLink
-                      className={pills === "2" ? "active" : ""}
-                      href="#pablo"
-                      onClick={e => {
-                        e.preventDefault();
-                        setPills("2");
-                      }}
-                    > */}
-                      <i className="now-ui-icons location_world"></i>
-                    {/* </NavLink> */}
-                  </NavItem>
-                  <NavItem>
-                    {/* <NavLink
-                      className={pills === "3" ? "active" : ""}
-                      href="#pablo"
-                      onClick={e => {
-                        e.preventDefault();
-                        setPills("3");
-                      }}
-                    > */}
-                      <i className="now-ui-icons sport_user-run"></i>
-                    {/* </NavLink> */}
-                  </NavItem>
                 </Nav>
               </div>
             </Col>
-            {/* <TabContent className="gallery" activeTab={"pills" + pills}> */}
               <TabPane tabId="pills1">
                 <Col className="ml-auto mr-auto" md="10">
                   <Row className="collections">
                     <Col md="6">
+                    <a href="/createproject">
                       <img
                         alt="..."
                         className="img-raised"
-                        src={require("assets/img/bg1.jpg")}
-                      ></img>
-                      <img
-                        alt="..."
-                        className="img-raised"
-                        src={require("assets/img/bg3.jpg")}
-                      ></img>
+                        src={require("assets/img/bg8-faded.png")}
+                      >
+                      </img>
+                      </a>
                     </Col>
                     <Col md="6">
+                    <a href="/createproject">
                       <img
                         alt="..."
                         className="img-raised"
-                        src={require("assets/img/bg8.jpg")}
-                      ></img>
-                      <img
-                        alt="..."
-                        className="img-raised"
-                        src={require("assets/img/bg7.jpg")}
-                      ></img>
+                        src={require("assets/img/bg7-faded.png")}
+                      >
+                      </img>
+                      </a>
                     </Col>
                   </Row>
                 </Col>
               </TabPane>
-              <TabPane tabId="pills2">
-                <Col className="ml-auto mr-auto" md="10">
-                  <Row className="collections">
-                    <Col md="6">
-                      <img
-                        alt="..."
-                        className="img-raised"
-                        src={require("assets/img/bg6.jpg")}
-                      ></img>
-                      <img
-                        alt="..."
-                        className="img-raised"
-                        src={require("assets/img/bg11.jpg")}
-                      ></img>
-                    </Col>
-                    <Col md="6">
-                      <img
-                        alt="..."
-                        className="img-raised"
-                        src={require("assets/img/bg7.jpg")}
-                      ></img>
-                      <img
-                        alt="..."
-                        className="img-raised"
-                        src={require("assets/img/bg8.jpg")}
-                      ></img>
-                    </Col>
-                  </Row>
-                </Col>
-              </TabPane>
-              <TabPane tabId="pills3">
-                <Col className="ml-auto mr-auto" md="10">
-                  <Row className="collections">
-                    <Col md="6">
-                      <img
-                        alt="..."
-                        className="img-raised"
-                        src={require("assets/img/bg3.jpg")}
-                      ></img>
-                      <img
-                        alt="..."
-                        className="img-raised"
-                        src={require("assets/img/bg8.jpg")}
-                      ></img>
-                    </Col>
-                    <Col md="6">
-                      <img
-                        alt="..."
-                        className="img-raised"
-                        src={require("assets/img/bg7.jpg")}
-                      ></img>
-                      <img
-                        alt="..."
-                        className="img-raised"
-                        src={require("assets/img/bg6.jpg")}
-                      ></img>
-                    </Col>
-                  </Row>
-                </Col>
-              </TabPane>
-            {/* </TabContent> */}
           </Row>
         </Container>
       </div>

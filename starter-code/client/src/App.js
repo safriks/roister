@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import {Route} from 'react-router-dom';
 
-import LandingPage from "./LandingPage/LandingPage.js";
+import LandingPage from "./components/LandingPage.js";
 import Login from "./auth/Login";
 import Signup from "./auth/Signup";
 import Profile from "./components/Profile"
+import Project from "./components/Project"
 import CreateProfile from "./components/CreateProfile"
+import CreateProject from "./components/CreateProject"
 import NucleoIcons from "./views/index-sections/NucleoIcons"
-
-
-
-// import axios from "axios";
-
 
 class App extends Component {
 
@@ -20,15 +17,6 @@ class App extends Component {
       error: null
   };
 
-  componentDidMount() {
-    // axios.get(`${process.env.REACT_APP_API}`)
-    //     .then(response => {
-    //         this.setState({data: response.data})
-    //     })
-    //     .catch((error)=> {  
-    //     })
-  }
-
   render() {
     return (
       <div className="App">
@@ -36,13 +24,11 @@ class App extends Component {
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/Login" component={Login} />
             <Route exact path="/Signup" component={Signup} />
-<<<<<<< HEAD
-            <Route exact path="/" component={LandingPage} />
-=======
             <Route exact path="/Profile" component={Profile} />
+            <Route exact path="/Project" component={Project} />
             <Route exact path="/Create" component={CreateProfile} />
+            <Route exact path="/CreateProject" component={CreateProject} />
             <Route exact path="/icons" component={NucleoIcons} />
->>>>>>> 654ac84d691f90aa52c244cba424a8be08602f7d
           </header>
       </div>
     );
