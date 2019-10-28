@@ -1,10 +1,5 @@
-/*eslint-disable*/
 import React from "react";
-
-// reactstrap components
 import { Container } from "reactstrap";
-
-// core components
 
 function DefaultFooter() {
   return (
@@ -25,8 +20,7 @@ function DefaultFooter() {
                 <a
                   href="/"
                   target="_blank"
-                >
-                  Blog
+                >                 
                 </a>
               </li>
             </ul>
@@ -48,6 +42,7 @@ function DefaultFooter() {
           </a>
           .
         </div>
+
         </Container>
       </footer>
     </>
