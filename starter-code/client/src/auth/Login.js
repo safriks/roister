@@ -2,9 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import qs from "qs";
 import { Link } from "react-router-dom";
-import {loggedIn, getUser} from "../auth/auth";
-
-import ExamplesNavbar from "auth/ExamplesNavbar.js";
+import {signup} from "./auth";
+import ExamplesNavbar from "../components/Navbars/ExamplesNavbar.js";
 import Javascript from "../views/index-sections/Javascript.js";
 
 import 'assets/css/bootstrap.min.css'
@@ -25,11 +24,14 @@ import {
   Col
 } from "reactstrap";
 
+
 export default class Login extends Component {
    constructor(props){
        super(props)
+      
        this.handleChange = this.handleChange.bind(this);
        this.handleSubmit = this.handleSubmit.bind(this);
+       this.handleResponse = this.handleResponse.bind(this)
    }
 
    state = {
@@ -38,6 +40,7 @@ export default class Login extends Component {
        errorMessage: ""
    }
 
+
    handleChange(e) {
        this.setState({
            [e.target.name]: e.target.value
@@ -45,24 +48,23 @@ export default class Login extends Component {
    }
 
    handleSubmit(e) {
-     debugger
        e.preventDefault();
        axios({
            method: "POST",
            data: qs.stringify(this.state),
-           url: `${process.env.REACT_APP_API}/auth/login`,
+           url: `${process.env.REACT_APP_Server_API}/auth/login`,
            headers: {
                'Content-Type': 'application/x-www-form-urlencoded'
            }
        })
        .then((response)=> {
-
-            response.data === "Invalid credentials"
+            typeof response.data !== "object"
             ? this.setState({errorMessage: response.data}) 
             : this.handleResponse(response)
         })
       }
       handleResponse(response) {
+        debugger
         localStorage.setItem("user", JSON.stringify(response.data))
         this.props.history.push("/")
       }    
@@ -71,7 +73,7 @@ export default class Login extends Component {
     render() {
       return (
         <>
-        <ExamplesNavbar />
+        <ExamplesNavbar/>
           <div className="page-header clear-filter" filter-color="blue">
             <div
               className="page-header-image"
@@ -103,7 +105,7 @@ export default class Login extends Component {
                                 
                               </InputGroupAddon>
                               
-                              <Input onChange={this.handleChange} value={this.state.username} placeholder="username" type="text" name="username"/>
+                              <Input onChange={this.handleChange} value={this.state.username} placeholder="username" type="text" required name="username"/>
 
                               
                             </InputGroup>
@@ -118,7 +120,7 @@ export default class Login extends Component {
                                 </InputGroupText>
                               </InputGroupAddon>
                               
-                              <Input onChange={this.handleChange} value={this.state.password} placeholder="password"  type="password" name="password"/>
+                              <Input onChange={this.handleChange} value={this.state.password} placeholder="password"  type="password" required name="password"/>
 
                             </InputGroup>
                           </CardBody>
@@ -139,7 +141,7 @@ export default class Login extends Component {
                               <h6>
                                 <a
                                   className="link1"
-                                  href="#login"
+                                  href="#"
                                   onClick={e => e.preventDefault()}
                                 >
                                   Need Help?

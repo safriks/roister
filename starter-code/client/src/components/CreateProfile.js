@@ -3,10 +3,7 @@ import axios from "axios";
 
 import {
     Button,
-    NavItem,
-    NavLink,
     Nav,
-    TabContent,
     TabPane,
     Container,
     Row,
@@ -14,11 +11,10 @@ import {
     UncontrolledTooltip
   } from "reactstrap";
 
- import ExamplesNavbar from "auth/ExamplesNavbar.js";
+ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
  import DefaultFooter from "components/Footers/DefaultFooter.js";
 
 export default class CreateProfile extends Component {
-
     constructor(props){
         super(props);
         this.handleChange = this.handleChange.bind(this);
@@ -157,6 +153,45 @@ render(){
           placeholder='Degree'  
           type="text" 
           name='degree'/>
+          <Row>
+            <Col className="ml-auto mr-auto" md="6">
+              <h4 className="title text-center">My Portfolio</h4>
+              <div className="nav-align-center">
+                <Nav
+                  className="nav-pills-info nav-pills-just-icons"
+                  pills
+                  role="tablist"
+                >
+                </Nav>
+              </div>
+            </Col>
+              <TabPane tabId="pills1">
+                <Col className="ml-auto mr-auto" md="10">
+                  <Row className="collections">
+                    <Col md="6">
+                    <a href="/createproject">
+                      <img
+                        alt="..."
+                        className="img-raised"
+                        src={require("assets/img/bg8-faded.png")}
+                      >
+                      </img>
+                      </a>
+                    </Col>
+                    <Col md="6">
+                    <a href="/createproject">
+                      <img
+                        alt="..."
+                        className="img-raised"
+                        src={require("assets/img/bg7-faded.png")}
+                      >
+                      </img>
+                      </a>
+                    </Col>
+                  </Row>
+                </Col>
+              </TabPane>
+          </Row>
           <br></br>
           <button
           onChange={this.handleChange}

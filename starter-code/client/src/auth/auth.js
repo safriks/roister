@@ -1,17 +1,21 @@
 import Axios from "axios";
 import qs from "querystring";
+import {createBrowserHistory} from 'history';
+
 const axios = Axios.create({
     withCredentials: true,
-    baseURL: process.env.REACT_APP_API,
+    baseURL: process.env.REACT_APP_Server_API,
+    headers: { 'content-type': 'application/x-www-form-urlencoded', "Access-Control-Allow-Origin": "http://localhost:3000" }
 });
 
+
+const history = createBrowserHistory()
 
 export const login = function(username, password) {
         return axios({
             method: "POST",
             url: "/auth/login",
-            baseURL: this.domain,
-            headers: { 'content-type': 'application/x-www-form-urlencoded' },
+            headers: { 'content-type': 'application/x-www-form-urlencoded', "Access-Control-Allow-Origin": "http://localhost:3000" },
             data: qs.stringify({username, password}),
         })
         .then((response)=> {
@@ -23,15 +27,14 @@ export const signup = function({username, password, firstname, lastname, email})
         return axios({
             method: "POST",
             url: "/auth/signup",
-            baseURL: this.domain,
             headers: { 'content-type': 'application/x-www-form-urlencoded' },
             data: qs.stringify({username, password, firstname, lastname, email}),
         })
         .then((response)=> {
             this.setUser(response.data);
+            return
         })
     }
-
 
 export const setUser = function(user){
         localStorage.setItem('user', JSON.stringify(user));
@@ -48,10 +51,12 @@ export const loggedIn = function(){
 
 export const logout = function(){
        return axios({
-            baseURL: this.domain,
             url: "/auth/logout"
         })
         .then((response)=> {
             localStorage.removeItem('user');
+            history.push('/Login')
+            history.go(0)
         })
+        .catch(err => console.log(err))
     }    
