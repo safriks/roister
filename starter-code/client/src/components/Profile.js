@@ -37,7 +37,7 @@ export default class Profile extends Component {
         return (
             <div>
                 {this.state.loading ? 
-                    <img src="/loading.gif" alt=""/>:
+                    <img src="/loading.gif" alt=""/>: 
                     <>
                         <h3>{this.state.profile.firstname}</h3>
                         <h3>{this.state.profile.lastname}</h3>
@@ -50,6 +50,7 @@ export default class Profile extends Component {
                         <p>{this.state.profile.summary}</p>
                         <p>{this.state.profile.picture}</p>
                         <p>{this.state.profile.portfolio}</p>
+
                     </>
                 }
                 {this.state.error ? 

@@ -29,6 +29,7 @@ export default class CreateProfile extends Component {
             aboutme: '',
             degree: '',
             skills: '',
+            jobposition: '',
             financing: '',
             timing: '',
             picture: '',
@@ -49,6 +50,7 @@ handleChange(e){
 
 handleSubmit(e) {
     e.preventDefault(); 
+    let user = JSON.parse(localStorage.getItem('user'));
     axios({
         url: "https://localhost:3001/profile/create",
         data: this.state,
@@ -83,45 +85,12 @@ render(){
           <div >
             <img className="photo-container" alt="..." src={require("assets/img/icons-profile.png")}></img>
           </div>
-          <input 
-          onChange={this.handleChange} 
-          value={this.state.firstname} 
-          placeholder="firstname" 
-          type="text" 
-          name="firstname"
-          />
-          <input 
-          onChange={this.handleChange} 
-          value={this.state.lastname} 
-          placeholder="lastname" 
-          type="text" 
-          name="lastname"
-          />
-          <input 
-          onChange={this.handleChange} 
-          value={this.state.username} 
-          placeholder="username" 
-          type="text" 
-          name="username"
-          />
-          <p className="category">Location</p>
-          <input 
-          onChange={this.handleChange} 
-          value={this.state.location} 
-          placeholder="location"  
-          type="text" 
-          name="location"/>
+          <h4 className="title">Welcome!</h4>
+          <h5 className="title">Create your profile</h5>
         </Container>
       </div>
       <div className="section">
         <Container>
-        <h3 className="title">Skills</h3>
-          <input 
-          onChange={this.handleChange} 
-          value={this.state.skills} 
-          placeholder='skills'  
-          type="text" 
-          name='skills'/>
           <div className="button-container">
             <Button className="btn-round" color="info" size="lg">
               Follow
@@ -149,18 +118,39 @@ render(){
               Follow me on Instagram
             </UncontrolledTooltip>
           </div>
+          <h3 className="title">Location</h3>
+          <input 
+          onChange={this.handleChange} 
+          value={this.state.location} 
+          placeholder="Location"  
+          type="text" 
+          name="location"/>
+          <h3 className="title">Skills</h3>
+          <input 
+          onChange={this.handleChange} 
+          value={this.state.skills} 
+          placeholder='Skills'  
+          type="text" 
+          name='skills'/>
           <h3 className="title">About me</h3>
           <input 
           onChange={this.handleChange} 
           value={this.state.aboutme} 
-          placeholder="aboutme"  
+          placeholder="About Me"  
           type="text" 
           name="aboutme"/>
+          <h3 className="title">Job Position</h3>
+          <input 
+          onChange={this.handleChange} 
+          value={this.state.jobposition} 
+          placeholder='Job Position'  
+          type="text" 
+          name='degree'/>
           <h3 className="title">Degree</h3>
           <input 
           onChange={this.handleChange} 
           value={this.state.Degree} 
-          placeholder='degree'  
+          placeholder='Degree'  
           type="text" 
           name='degree'/>
           <Row>
@@ -202,6 +192,17 @@ render(){
                 </Col>
               </TabPane>
           </Row>
+          <br></br>
+          <button
+          onChange={this.handleChange}
+              type='submit'
+              className="btn-neutral btn-round"
+              color="info"
+              type= 'submit'
+              size="lg"
+          >
+          Create Profile
+          </button>
         </Container>
       </div>
       <DefaultFooter />
