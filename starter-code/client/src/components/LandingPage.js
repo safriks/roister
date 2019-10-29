@@ -82,7 +82,7 @@ function LandingPage() {
             <h2 className="title">Here is our team</h2>
             <div className="team">
               <Row>
-                <Col md="4">
+                <Col md="6">
                   <div className="team-player">
                     <img
                       alt="..."
@@ -102,7 +102,7 @@ function LandingPage() {
                     </p>
                   </div>
                 </Col>
-                <Col md="4">
+                <Col md="6">
                   <div className="team-player">
                     <img
                       alt="..."
