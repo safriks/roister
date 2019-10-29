@@ -17,6 +17,7 @@ import {
 export default class CreateProfile extends Component {
     constructor(props){
         super(props);
+        this.formRef = React.createRef();
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -51,9 +52,14 @@ handleChange(e){
 handleSubmit(e) {
     e.preventDefault(); 
     let user = JSON.parse(localStorage.getItem('user'));
+    let formData = new FormData(this.formRef.current); 
     axios({
         url: "https://localhost:3001/profile/create",
         data: this.state,
+        data1: formData,
+            headers: {
+                'content-type': 'multipart/form-data'
+            },     
         method: "POST"
     })
     .then((response)=> {
@@ -83,6 +89,10 @@ render(){
         ></div>
         <Container>
           <div >
+          <label>
+          <input type="file" name="picture"/>
+          Upload a profile picture
+          </label>
             <img className="photo-container" alt="..." src={require("assets/img/icons-profile.png")}></img>
           </div>
           <h4 className="title">Welcome!</h4>
@@ -118,6 +128,7 @@ render(){
               Follow me on Instagram
             </UncontrolledTooltip>
           </div>
+          <form onSubmit={this.handleSubmit} ref={this.formRef}>
           <h3 className="title">Location</h3>
           <input 
           onChange={this.handleChange} 
@@ -203,9 +214,10 @@ render(){
           >
           Create Profile
           </button>
+          </form>
         </Container>
       </div>
-      <DefaultFooter />
+      <DefaultFooter/>
     </div>
   </>
     )  

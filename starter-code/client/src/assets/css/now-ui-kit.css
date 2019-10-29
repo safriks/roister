@@ -3173,6 +3173,18 @@ Created using IcoMoon - icomoon.io
   color: white;
 }
 
+.enter-text{
+  text-align: center;
+  font-size: 20px;
+}
+
+.i-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 .roister-name{
   font-size: 130px;
   margin-bottom: -25px;
@@ -3214,6 +3226,28 @@ Created using IcoMoon - icomoon.io
 .signup-form{
   margin: 20px;
   
+}
+
+.team{
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
+  align-items: center;
+}
+ 
+.email-sent-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.email-sent-text{
+  text-align: center;
+}
+
+.text-p{
+  margin-top: -10px;
 }
 
 .nav-tabs {

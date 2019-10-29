@@ -174,7 +174,7 @@ export default class Signup extends Component {
                                 <Link to={"/Login"}
                                   className="link1"                        
                                 >
-                                  Already have an account ? Login. 
+                                  Already have an account? Login. 
                                 </Link>
                               </h6>
                             </div>
