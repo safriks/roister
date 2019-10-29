@@ -1,17 +1,34 @@
 const express = require("express");
 const router = express.Router();
 const Project= require("../models/project");
+
 var multer  = require('multer');
-var upload = multer({ dest: `${__dirname}/../uploads/` });
+const storage = multer.diskStorage({
+    destination: `${__dirname}/../uploads/`,
+    filename(req, file, cb) {
+      cb(null, `${new Date()}-${file.originalname}`);
+    },
+  });
+  
+  const upload = multer({ storage });
+// var upload = multer({ dest: `${__dirname}/../uploads/` });
 
 router.get("/createproject", (req,res)=> {
     res.render("CreateProject")
 })
   
 router.post('/createproject', upload.single('picture'), function (req, res) {
-    const {name, tagline, tags, } = req.body;
-    const userId = req.session.user._id 
-      Project.create({title: req.body.name, path: req.file.filename})
+    console.log(req.body)
+    console.log(req.file)
+
+      Project.create({
+          name: req.body.name, 
+          location: req.body.location,
+          tagline: req.body.tagline,
+          tags: req.body.tags,
+          picture: req.file.picture,
+          userId: mongoose.Types.ObjectId(req.body.userId)
+        })
         .then(()=> {
             res.send("uploaded!")
         })

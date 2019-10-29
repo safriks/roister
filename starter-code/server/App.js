@@ -64,6 +64,7 @@ var corsOptions = {
 }
 app.use(cors(corsOptions))
 app.use('/', require('./routes/auth'));
+app.use('/', require('./routes/createproject'));
 // app.use('/', require('./routes/landing-page'));
 // app.use('/', require('./routes/profile'));
 
