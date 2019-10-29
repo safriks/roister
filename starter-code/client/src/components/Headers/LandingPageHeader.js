@@ -1,5 +1,11 @@
 import React from "react";
-import { Container } from "reactstrap";
+
+import {
+  Input,
+  Form,
+  NavItem,
+  Container,
+} from "reactstrap";
 
 function Home() {
   let pageHeader = React.createRef();
@@ -31,6 +37,12 @@ function Home() {
           <Container>
             <h1 className="title">ABOUT ROISTER</h1>
             <p>Welcome to the world's most innovative network of entrepreneurs</p>
+            <NavItem id="searchbar">
+              <Form action="/action_page.php">
+                <input className="searchbar" type="text" placeholder="Skills or projects..." name="search"></input>
+                <button className="searchbar-button" type="submit">Search</button>
+              </Form>
+            </NavItem>
             <div className="text-center">
             </div>
           </Container>

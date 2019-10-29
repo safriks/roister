@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import qs from "qs";
 import { Link } from "react-router-dom";
-import {signup} from "./auth";
 import ExamplesNavbar from "../components/Navbars/ExamplesNavbar.js";
 import Javascript from "../views/index-sections/Javascript.js";
+import {login} from "./auth";
 
 import 'assets/css/bootstrap.min.css'
 import 'assets/css/bootstrap.min.css.map'
@@ -31,7 +31,6 @@ export default class Login extends Component {
       
        this.handleChange = this.handleChange.bind(this);
        this.handleSubmit = this.handleSubmit.bind(this);
-       this.handleResponse = this.handleResponse.bind(this)
    }
 
    state = {
@@ -48,25 +47,15 @@ export default class Login extends Component {
    }
 
    handleSubmit(e) {
-       e.preventDefault();
-       axios({
-           method: "POST",
-           data: qs.stringify(this.state),
-           url: `${process.env.REACT_APP_API}/auth/login`,
-           headers: {
-               'Content-Type': 'application/x-www-form-urlencoded'
-           }
-       })
-       .then((response)=> {
-            typeof response.data !== "object"
-            ? this.setState({errorMessage: response.data}) 
-            : this.handleResponse(response)
+      e.preventDefault();
+      login(this.state)
+        .then((response)=> {
+          this.props.history.push("/");
         })
-      }
-      handleResponse(response) {
-        localStorage.setItem("user", JSON.stringify(response.data))
-        this.props.history.push("/")
-      }    
+        .catch((error)=> {
+          this.setState({errorMessage: error.response.data});
+        })
+   }
 
     render() {
       return (
@@ -100,12 +89,14 @@ export default class Login extends Component {
                               <InputGroupText>
                                 <i className="now-ui-icons users_circle-08"></i>
                               </InputGroupText>
-                                
                               </InputGroupAddon>
-                              
-                              <Input onChange={this.handleChange} value={this.state.username} placeholder="username" type="text" required name="username"/>
-
-                              
+                              <Input 
+                              onChange={this.handleChange}
+                              value={this.state.username}
+                              placeholder="username"
+                              type="text" 
+                              required name="username"
+                              />
                             </InputGroup>
                             <InputGroup
                               className={

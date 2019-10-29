@@ -4,35 +4,36 @@ import '../assets/css/bootstrap.min.css.map';
 import '../assets/css/now-ui-kit.css';
 import '../assets/css/now-ui-kit.css.map';
 import '../assets/css/now-ui-kit.min.css';
+
 import axios from "axios";
 
 import {
   Input,
   Container,
   Row,
+  Button,
   Col,
 } from "reactstrap";
 
-import VisibleNavbar from "components/Navbars/VisibleNavbar.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
-
+import ExamplesNavbar from './Navbars/ExamplesNavbar';
+import HeaderDescription from "./Headers/HeaderDescription";
 export default class CreateProject extends Component {
     constructor(props){
         super(props);
+        this.state = {
+          name: '', 
+          location: '',
+          tagline: '', 
+          // description: '', 
+          tags: '', 
+          // financing: '', 
+          // timing: '',
+          // team: '', 
+          picture: ''
+      }
         this.handleChangeProject = this.handleChangeProject.bind(this);
         this.handleSubmitProject = this.handleSubmitProject.bind(this);
-    }
-
-    state = {
-        name: '', 
-        location: '',
-        tagline: '', 
-        description: '', 
-        tags: '', 
-        financing: '', 
-        timing: '',
-        team: '', 
-        picture: ''
     }
 
 handleChangeProject(e){
@@ -44,9 +45,12 @@ handleChangeProject(e){
 handleSubmitProject(e){
     e.preventDefault(); 
     axios({
-        url: "https://localhost:3001/createproject",
+        method: "POST",
+        url: `${process.env.REACT_APP_Server_API}/createproject`,
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+      },
         data: this.state,
-        method: "POST"
     })
     .then((response)=> {
         this.props.history.push(`/project/${response.data._id}`)
@@ -59,48 +63,17 @@ handleSubmitProject(e){
 render(){
   return (
     <>
-      <VisibleNavbar />
+  <ExamplesNavbar navLinksBlack={true} className="text-black" />
       <div className="wrapper">
-        <div className="section section-about-us">
-          <Container>
-            <Row>
-              <Col className="ml-auto mr-auto text-center" md="8">
-                <h2 className="title">Create Your Project</h2>
-                <h5 className="description">
-                Roister brings together entrepreneurial talents and early stage projects in need of help.
-                No matter if you are a code wizard, legal savage, digital marketing expert, an investor, 
-                a ferocious business tycoon, photographer or a visual artist. 
-               </h5>
-               <h5>There is always someone looking for your expertise.</h5>
-              </Col>
-            </Row>
-            <div className="separator separator-primary"></div>
-            <div className="section-story-overview">
-              <Row>
-                <Col md="6">
-                  <div
-                    className="image-container image-left"
-                    style={{
-                      backgroundImage:
-                        "url(" + require("../assets/img/cafe.jpg") + ")"
-                    }}
-                  >
-                  </div>
-                </Col>
-                <Col md="5">
-                  <div
-                    className="image-container image-right"
-                    style={{
-                      backgroundImage:
-                        "url(" + require("../assets/img/group-working.jpg") + ")"
-                    }}
-                  >
-                  </div>
-                </Col>
-              </Row>
-            </div>
-          </Container>
-        </div>
+        <HeaderDescription picture1="../../assets/img/cafe.jpg" picture2="../../assets/img/group-working.jpg">
+            <h2 className="title">Create Your Project</h2>
+            <h5 className="description">
+            Roister brings together entrepreneurial talents and early stage projects in need of help.
+            No matter if you are a code wizard, legal savage, digital marketing expert, an investor, 
+            a ferocious business tycoon, photographer or a visual artist. 
+            </h5>
+            <h5>There is always someone looking for your expertise.</h5>
+        </HeaderDescription>
         <div className="section section-team text-center">
         <h3>Fill in the form</h3>
           <Container>
@@ -124,19 +97,19 @@ render(){
             <Input 
               onChange={this.handleChangeProject} 
               value={this.state.tagline} 
-              placeholder="Taglines" 
+              placeholder="Short description of your project" 
               type="text" 
               required name="tagline"
             ></Input>
             <br></br>
-            <Input 
+            {/* <Input 
               onChange={this.handleChangeProject} 
               value={this.state.description} 
               placeholder="Description"  
               type="text" 
               required name="description"
-            ></Input>
-            <br></br>
+            ></Input> */}
+            {/* <br></br> */}
             <Input 
               onChange={this.handleChangeProject} 
               value={this.state.tags} 
@@ -144,31 +117,32 @@ render(){
               type="text" 
               required name="tags"
             ></Input>
-            <br></br>
-            <Input 
+            {/* <br></br>
+            { <Input 
               onChange={this.handleChangeProject} 
               value={this.state.financing} 
               placeholder="Financing: Equity or Financial Compensation"  
               type="text" 
               required name="financing"
-            ></Input>
-            <br></br>
+            ></Input> */} 
+            {/* <br></br>
             <Input 
               onChange={this.handleChangeProject} 
               value={this.state.timing} 
               placeholder="Timing"  
               type="text" 
               required name="timing"
-            ></Input>
-            <br></br>
+            ></Input> */}
+            {/* <br></br>
              <Input 
               onChange={this.handleChangeProject} 
               value={this.state.team} 
               placeholder="Team"  
               type="text" 
               required name="team"
-            ></Input>
+            ></Input> */}
             <br></br>
+            <Button className="btn-round">
             <Input 
               onChange={this.handleChangeProject} 
               value={this.state.picture} 
@@ -176,12 +150,15 @@ render(){
               type="file" 
               required name="picture"
             ></Input>
+            </Button>
             <br></br>
-            <button 
+            <Button 
               onClick={this.handleSubmitProject}
               type="submit"
+              color="info"
+              className="btn-round"
             >Submit 
-            </button>
+            </Button>
           </div>
           </Container>
           </div>

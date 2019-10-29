@@ -7,10 +7,11 @@ const projectSchema = new Schema({
   tagline: String, 
   description: String, 
   tags: String, 
-  financing: String, 
-  timing: String,
-  team: String, 
+  // financing: String, 
+  // timing: String,
+  // team: String, 
   picture: String,
+  userId
 });
 
 const Project = mongoose.model("Project", projectSchema);
