@@ -14,6 +14,7 @@ import {
   Button,
   Col,
 } from "reactstrap";
+import {getUser} from '../auth/auth'
 
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 import ExamplesNavbar from './Navbars/ExamplesNavbar';
@@ -30,7 +31,8 @@ export default class CreateProject extends Component {
           // financing: '', 
           // timing: '',
           // team: '', 
-          picture: ''
+          picture: '',
+          userId: getUser()._id
       }
         this.handleChangeProject = this.handleChangeProject.bind(this);
         this.handleSubmitProject = this.handleSubmitProject.bind(this);
@@ -40,6 +42,14 @@ handleChangeProject(e){
     this.setState({
         [e.target.name]: e.target.value
     })
+}
+
+handleInputUpload(event){
+  const data = new FormData();
+    data.append('file', event.target.files[0]);
+    data.append('name', 'some value user types');
+    data.append('description', 'some value user types');
+    this.setState({picture: data})
 }
 
 handleSubmitProject(e){
@@ -53,7 +63,7 @@ handleSubmitProject(e){
         data: this.state,
     })
     .then((response)=> {
-        this.props.history.push(`/project/${response.data._id}`)
+        this.props.history.push(`/project/${response.data}`)
     })
     .catch((error)=> {
         console.log(error)
@@ -77,7 +87,7 @@ render(){
         <div className="section section-team text-center">
         <h3>Fill in the form</h3>
           <Container>
-          <div >
+          <form encType="multipart/form-data">
             <Input 
               onChange={this.handleChangeProject} 
               value={this.state.name} 
@@ -144,8 +154,7 @@ render(){
             <br></br>
             <Button className="btn-round">
             <Input 
-              onChange={this.handleChangeProject} 
-              value={this.state.picture} 
+              onChange={(e) => this.handleInputUpload(e)}  
               placeholder="Upload a picture"  
               type="file" 
               required name="picture"
@@ -159,7 +168,7 @@ render(){
               className="btn-round"
             >Submit 
             </Button>
-          </div>
+          </form>
           </Container>
           </div>
         </div>

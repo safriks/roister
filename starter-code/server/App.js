@@ -3,8 +3,6 @@ require('./models/user');
 require('./models/profile');
 require('./models/project');
 
-
-
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 var createError = require('http-errors')
@@ -66,9 +64,9 @@ var corsOptions = {
 }
 app.use(cors(corsOptions))
 app.use('/', require('./routes/auth'));
+app.use('/', require('./routes/createproject'));
 require('./routes/forgotPassword')(app);
 // app.use('/', require('./routes/forgotPassword'))
-
 // app.use('/', require('./routes/landing-page'));
 // app.use('/', require('./routes/profile'));
 
