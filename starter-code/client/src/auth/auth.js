@@ -11,28 +11,32 @@ const axios = Axios.create({
 
 const history = createBrowserHistory()
 
-export const login = function(username, password) {
+export const login = function({username, password}) {
         return axios({
             method: "POST",
-            url: "/auth/login",
-            headers: { 'content-type': 'application/x-www-form-urlencoded', "Access-Control-Allow-Origin": "http://localhost:3000" },
+            url: `${process.env.REACT_APP_Server_API}/auth/login`,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
             data: qs.stringify({username, password}),
         })
         .then((response)=> {
-            this.setUser(response.data)
+            setUser(response.data)
         })
-    }
+    } 
 
 export const signup = function({username, password, firstname, lastname, email}) {
         return axios({
             method: "POST",
-            url: "/auth/signup",
-            headers: { 'content-type': 'application/x-www-form-urlencoded' },
+            url: `${process.env.REACT_APP_Server_API}/auth/signup`,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
             data: qs.stringify({username, password, firstname, lastname, email}),
         })
         .then((response)=> {
-            this.setUser(response.data);
-            return
+            setUser(response.data);
+            return response
         })
     }
 

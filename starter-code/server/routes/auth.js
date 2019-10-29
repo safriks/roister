@@ -37,12 +37,12 @@ router.post("/auth/login", (req,res)=> {
     User.findOne({username: req.body.username})
         .then((user)=> {
             console.log(user)
-            if(!user) res.send("Invalid credentials")
+            if(!user) res.status(403).send("Invalid credentials")
             else {
                 console.log(req.body.password)
                 bcrypt.compare(req.body.password, user.password, function(err, equal) {
                     if(err) res.send(err);
-                    else if(!equal) {res.send("Invalid password");}
+                    else if(!equal) {res.status(403).send("Invalid credentials");}
                     else {
                         req.session.user = user;
                         res.send(user);
