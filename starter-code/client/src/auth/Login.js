@@ -52,7 +52,7 @@ export default class Login extends Component {
        axios({
            method: "POST",
            data: qs.stringify(this.state),
-           url: `${process.env.REACT_APP_Server_API}/auth/login`,
+           url: `${process.env.REACT_APP_API}/auth/login`,
            headers: {
                'Content-Type': 'application/x-www-form-urlencoded'
            }
@@ -64,11 +64,9 @@ export default class Login extends Component {
         })
       }
       handleResponse(response) {
-        debugger
         localStorage.setItem("user", JSON.stringify(response.data))
         this.props.history.push("/")
       }    
-      
 
     render() {
       return (
@@ -78,7 +76,7 @@ export default class Login extends Component {
             <div
               className="page-header-image"
               style={{
-                backgroundImage: "url(" + require("assets/img/login.jpg") + ")"
+                backgroundImage: "url(" + require("assets/img/venture.jpg") + ")"
               }}
             ></div>
             <div className="all">
@@ -139,13 +137,12 @@ export default class Login extends Component {
                             </div>
                             <div className="pull-right">
                               <h6>
-                                <a
+                                <Link to={"/Send-reset"}                             
                                   className="link1"
-                                  href="#"
-                                  onClick={e => e.preventDefault()}
+                                  
                                 >
-                                  Need Help?
-                                </a>
+                                  Forgot your password?
+                                </Link>
                               </h6>
                             </div>
                           </CardFooter>
