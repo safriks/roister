@@ -39,9 +39,10 @@ router.post("/auth/login", (req,res)=> {
             console.log(user)
             if(!user) res.send("Invalid credentials")
             else {
+                console.log(req.body.password)
                 bcrypt.compare(req.body.password, user.password, function(err, equal) {
                     if(err) res.send(err);
-                    else if(!equal) res.send("Invalid password");
+                    else if(!equal) {res.send("Invalid password");}
                     else {
                         req.session.user = user;
                         res.send(user);
@@ -56,8 +57,9 @@ router.post("/auth/login", (req,res)=> {
 
 
 router.get("/auth/logout", (req, res)=> {
+    console.log("logout req received")
     req.session.destroy();
-    res.redirect("/");
+    res.send("Logout successful");
 })
 
 module.exports = router;

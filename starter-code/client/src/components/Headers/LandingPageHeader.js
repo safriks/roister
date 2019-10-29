@@ -1,9 +1,5 @@
 import React from "react";
-
-// reactstrap components
-import { Button, Container } from "reactstrap";
-
-// core components
+import { Container } from "reactstrap";
 
 function Home() {
   let pageHeader = React.createRef();
@@ -27,7 +23,7 @@ function Home() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("../assets/img/bg8.jpg") + ")"
+            backgroundImage: "url(" + require("../../assets/img/bg8.jpg") + ")"
           }}
           ref={pageHeader}
         ></div>

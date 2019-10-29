@@ -1,7 +1,6 @@
 import React from "react";
-import {getUser} from "../auth/auth";
+import {getUser, logout} from "../../auth/auth";
 
-// reactstrap components
 import {
   Collapse,
   Button,
@@ -9,14 +8,21 @@ import {
   DropdownItem,
   UncontrolledDropdown,
   Navbar,
+  Input,
+  Form,
   NavItem,
   NavLink,
   Nav,
   Container,
 } from "reactstrap";
 
-function ExamplesNavbar() {
+function handleLogout(){
+  logout()
+}
+
+function ExamplesNavbar(props) {
   var user = getUser();
+ 
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   React.useEffect(() => {
@@ -85,19 +91,6 @@ function ExamplesNavbar() {
             color="primary">
             Roister
             </Button>
-            <button
-              className="navbar-toggler navbar-toggler"
-              onClick={() => {
-                document.documentElement.classList.toggle("nav-open");
-                setCollapseOpen(!collapseOpen);
-              }}
-              aria-expanded={collapseOpen}
-              type="button"
-            >
-              <span className="navbar-toggler-bar top-bar"></span>
-              <span className="navbar-toggler-bar middle-bar"></span>
-              <span className="navbar-toggler-bar bottom-bar"></span>
-            </button>
           </div>
           <Collapse
             className="justify-content-end"
@@ -105,53 +98,27 @@ function ExamplesNavbar() {
             navbar
           >
             <Nav navbar>
-            <>{user 
-            ? <><NavItem>
-                <NavLink href="/">
-                  Contact
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/">
-                  About Us
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://twitter.com/"
-                  target="_blank"
-                  id="twitter-tooltip"
-                >
-                  <i className="fab fa-twitter"></i>
-                  <p className="d-lg-none d-xl-none">Twitter</p>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  id="facebook-tooltip"
-                >
-                  <i className="fab fa-facebook-square"></i>
-                  <p className="d-lg-none d-xl-none">Facebook</p>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  id="instagram-tooltip"
-                >
-                  <i className="fab fa-instagram"></i>
-                  <p className="d-lg-none d-xl-none">Instagram</p>
-                </NavLink>
-              </NavItem></>
-            : <><NavItem>
-                <NavLink href="/login">
+            <>{user
+            ? <>
+            <NavItem>
+              <Form action="/action_page.php">
+                <Input type="text" placeholder="Search.." name="search"></Input>
+                <button type="submit"></button>
+              </Form>
+            </NavItem>
+            <NavItem>
+                <NavLink onClick={()=> handleLogout()}>
                   Logout
                 </NavLink>
               </NavItem>
               <NavItem>
+                <NavLink href="/create">
+                  Create Profile
+                </NavLink>
+              </NavItem>
+              </>
+            : <>
+              <NavItem>
                 <NavLink href="/">
                   Contact
                 </NavLink>
@@ -161,36 +128,7 @@ function ExamplesNavbar() {
                   About Us
                 </NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://twitter.com/"
-                  target="_blank"
-                  id="twitter-tooltip"
-                >
-                  <i className="fab fa-twitter"></i>
-                  <p className="d-lg-none d-xl-none">Twitter</p>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  id="facebook-tooltip"
-                >
-                  <i className="fab fa-facebook-square"></i>
-                  <p className="d-lg-none d-xl-none">Facebook</p>
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  id="instagram-tooltip"
-                >
-                  <i className="fab fa-instagram"></i>
-                  <p className="d-lg-none d-xl-none">Instagram</p>
-                </NavLink>
-              </NavItem></>
+              </>
             }</>
             </Nav>
           </Collapse>

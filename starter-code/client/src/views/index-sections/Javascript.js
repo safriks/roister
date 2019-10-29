@@ -15,22 +15,23 @@ function Javascript(props) {
 
   return (
       <>
-        {props.errorMessage === "" ? 
-        <Container>
-              <Row id="modals">
-                <Col md="12">
-                  <Button
-                     type="submit"
-                      block
-                      className="btn-round"
-                      color="info"
-                      size="lg"
-                  >
-                  Get Started
-                  </Button>
+        {props.errorMessage === "" 
+          ? 
+          <Container>
+                <Row id="modals">
+                  <Col md="12">
+                    <Button
+                      type="submit"
+                        block
+                        className="btn-round"
+                        color="info"
+                        size="lg"
+                    >
+                    Get Started
+                    </Button>
                   </Col>
-                  </Row>
-                  </Container>
+                </Row>
+            </Container>
             :
             <Container>
               <Row id="modals">
@@ -54,11 +55,11 @@ function Javascript(props) {
                         >
                           <i className="now-ui-icons ui-1_simple-remove"></i>
                         </button>
-                        <h4 className="title title-up">Error</h4>
+                        <h4 className="title title-up">Oops! Something went wrong</h4>
                       </div>
                     <ModalBody>
                       <p>
-                     {props.errorMessage}
+                     {props.errorMessage}. Try again or click on "Need Help?" to reset it.
                       </p>
                     </ModalBody>
                       <div className="modal-footer">

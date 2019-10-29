@@ -1,9 +1,10 @@
 import React from "react";
+import {getUser} from "../../auth/auth";
+
 // reactstrap components
 import {
   Collapse,
   Button,
-  DropdownToggle,
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
@@ -12,10 +13,10 @@ import {
   NavLink,
   Nav,
   Container,
-  UncontrolledTooltip
 } from "reactstrap";
 
-function ExamplesNavbar() {
+function VisibleNavbar() {
+  var user = getUser();
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   React.useEffect(() => {
@@ -39,7 +40,8 @@ function ExamplesNavbar() {
   });
   return (
     <>
-      {collapseOpen ? (
+      {collapseOpen
+      ? (
         <div
           id="bodyClick"
           onClick={() => {
@@ -47,8 +49,9 @@ function ExamplesNavbar() {
             setCollapseOpen(false);
           }}
         />
-      ) : null}
-      <Navbar className={"fixed-top " + navbarColor} color="info" expand="lg">
+      ) 
+      : null}
+      <Navbar className={"fixed-top " + navbarColor} id="navbar" expand="lg">
         <Container>
           <UncontrolledDropdown className="button-dropdown">
             <DropdownMenu aria-labelledby="navbarDropdown">
@@ -77,8 +80,8 @@ function ExamplesNavbar() {
           <div className="navbar-translate">
             <Button 
             href="/login" 
-            target="_blank"
-            id="navbar-brand"
+            target="_blank" 
+            id="navbar-brand" 
             color="primary">
             Roister
             </Button>
@@ -102,51 +105,45 @@ function ExamplesNavbar() {
             navbar
           >
             <Nav navbar>
-            <NavItem>
-                <NavLink href="/login">
-                  Logout
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/">
+            <>{user 
+            ? <><NavItem>
+                <NavLink 
+                href="/"
+                id="links">
                   Contact
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/">
+                <NavLink 
+                href="/"
+                id="links">
                   About Us
                 </NavLink>
               </NavItem>
-              <NavItem>
+              </>
+            : <><NavItem>
                 <NavLink
-                  href="https://twitter.com/"
-                  target="_blank"
-                  id="twitter-tooltip"
-                >
-                  <i className="fab fa-twitter"></i>
-                  <p className="d-lg-none d-xl-none">Twitter</p>
+                href="/login"
+                id="links">
+                  Logout
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink 
+                href="/"
+                id="links">
+                  Contact
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="https://www.facebook.com/"
-                  target="_blank"
-                  id="facebook-tooltip"
-                >
-                  <i className="fab fa-facebook-square"></i>
-                  <p className="d-lg-none d-xl-none">Facebook</p>
+                href="/"
+                id="links">
+                  About Us
                 </NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  id="instagram-tooltip"
-                >
-                  <i className="fab fa-instagram"></i>
-                  <p className="d-lg-none d-xl-none">Instagram</p>
-                </NavLink>
-              </NavItem>
+              </>
+            }</>
             </Nav>
           </Collapse>
         </Container>
@@ -155,4 +152,4 @@ function ExamplesNavbar() {
   );
 }
 
-export default ExamplesNavbar;
+export default VisibleNavbar;
