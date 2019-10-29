@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import qs from "qs";
 import { Link } from "react-router-dom";
-import {signup} from "./auth";
 import ExamplesNavbar from "../components/Navbars/ExamplesNavbar.js";
 import Javascript from "../views/index-sections/Javascript.js";
 
@@ -64,7 +63,6 @@ export default class Login extends Component {
         })
       }
       handleResponse(response) {
-        debugger
         localStorage.setItem("user", JSON.stringify(response.data))
         this.props.history.push("/")
       }    

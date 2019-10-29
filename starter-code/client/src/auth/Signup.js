@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import axios from "axios";
 import qs from "qs";
+import ExamplesNavbar from "../components/Navbars/ExamplesNavbar.js";
 
 import 'assets/css/bootstrap.min.css'
 import 'assets/css/bootstrap.min.css.map'
 import 'assets/css/now-ui-kit.css'
 import 'assets/css/now-ui-kit.css.map'
 import 'assets/css/now-ui-kit.min.css'
-
-import ExamplesNavbar from "../components/Navbars/ExamplesNavbar.js";
 
 import {
   Button,
@@ -24,18 +23,21 @@ import {
 
 export default class Signup extends Component {
    constructor(props){
-       super(props);
-       this.state = {
+       super(props)
+
+       this.handleChange = this.handleChange.bind(this);
+       this.handleSubmit = this.handleSubmit.bind(this);
+    } 
+
+    state = {
         username: "",
         firstname: "",
         lastname: "",
         email: "",
-        password: ""
+        password: "",
+        errorMessage:""
     }
-       this.handleChange = this.handleChange.bind(this);
-       this.handleSubmit = this.handleSubmit.bind(this);
-   }
-
+       
    handleChange(e) {
        this.setState({
            [e.target.name]: e.target.value
@@ -47,7 +49,7 @@ export default class Signup extends Component {
        axios({
            method: "POST",
            data: qs.stringify(this.state),
-           url: `${process.env.REACT_APP_API}/auth/signup`,
+           url: `${process.env.REACT_APP_Server_API}/auth/signup`,
            headers: {
                'Content-Type': 'application/x-www-form-urlencoded'
            }
@@ -64,15 +66,13 @@ export default class Signup extends Component {
        return (
         <>
         <ExamplesNavbar/>
-        <div
-        className="section section-signup"
-        style={{
-          backgroundImage: "url(" + require("assets/img/mia.jpg") + ")",
-          backgroundSize: "cover",
-          backgroundPosition: "top center",
-          minHeight: "700px"
-       }}
-        >
+        <div className="page-header clear-filter" filter-color="blue">
+            <div
+              className="page-header-image"
+              style={{
+                backgroundImage: "url(" + require("assets/img/mia.jpg") + ")"
+              }}
+        ></div>
         <div className='signup-container'>
           <Row>
             <Card className="className='form-container-signup'" data-background-color="blue">
