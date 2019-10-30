@@ -8,7 +8,6 @@ const axios = Axios.create({
     headers: { 'content-type': 'application/x-www-form-urlencoded', "Access-Control-Allow-Origin": "http://localhost:3000" }
 });
 
-
 const history = createBrowserHistory()
 
 export const login = function({username, password}) {
@@ -25,14 +24,14 @@ export const login = function({username, password}) {
         })
     } 
 
-export const signup = function({username, password, firstname, lastname, email}) {
+export const signup = function(formData) {
         return axios({
             method: "POST",
             url: `${process.env.REACT_APP_Server_API}/auth/signup`,
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+                'Content-Type': 'multipart/form-data'
             },
-            data: qs.stringify({username, password, firstname, lastname, email}),
+              data: formData,
         })
         .then((response)=> {
             setUser(response.data);

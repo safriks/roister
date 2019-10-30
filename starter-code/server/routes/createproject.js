@@ -26,14 +26,5 @@ router.post('/createproject', uploadCloud.single('picture'), function (req, res)
         })
 })
 
-router.get("/createproject", (req, res)=> {
-    Project.find()
-        .then((createproject)=> {
-            res.render("createproject", {createproject})
-        })
-        .catch((err)=> {
-            res.send("err", err)
-        })
-})
 
 module.exports = router;

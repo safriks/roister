@@ -5,7 +5,7 @@ import '../assets/css/now-ui-kit.css.map';
 import '../assets/css/now-ui-kit.min.css';
 import React, { Component } from 'react';
 import {getUser} from '../auth/auth'
-import axios from "axios";
+import instance from "../auth/customAxios";
 
 import {
   Input,
@@ -53,17 +53,17 @@ handleInputUpload(e){
 handleSubmitProject(e){
     e.preventDefault(); 
     var formData = new FormData(this.formRef.current);
-
-    axios({
+    instance({
         method: "POST",
         url: `${process.env.REACT_APP_Server_API}/createproject`,
         headers: {
           'Content-Type': 'multipart/form-data'
       },
         data: formData,
+
     })
     .then((response)=> {
-        this.props.history.push(`/project/${response.data._id}`)
+        this.props.history.push("/profile")
     })
     .catch((error)=> {
         console.log(error)
@@ -144,14 +144,6 @@ render(){
                     required name="timing"
                   ></Input> 
                   <br></br>
-                  {/* <Input 
-                    onChange={this.handleChangeProject} 
-                    value={this.state.team} 
-                    placeholder="Team members"  
-                    type="text" 
-                    required name="team"
-                  ></Input>
-                  <br></br> */}
                   <Button className="btn-round">
                   <Input 
                     onChange={(e) => this.handleInputUpload(e)}  
