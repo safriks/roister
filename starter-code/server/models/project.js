@@ -11,7 +11,7 @@ const projectSchema = new Schema({
   // timing: String,
   // team: String, 
   picture: String,
-  userId
+  user: {type: mongoose.Types.ObjectId, ref: "user"}, 
 });
 
 const Project = mongoose.model("Project", projectSchema);
