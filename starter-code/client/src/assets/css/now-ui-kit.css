@@ -2158,8 +2158,8 @@ textarea.form-control {
   padding-left: 0; }
 
 .form-check .form-check-label {
-  display: inline-block;
-  position: relative;
+  /* display: inline-block; */
+  /* position: relative; */
   cursor: pointer;
   padding-left: 35px;
   line-height: 26px;
@@ -2176,8 +2176,8 @@ textarea.form-control {
 .form-check .form-check-sign::before,
 .form-check .form-check-sign::after {
   content: " ";
-  display: inline-block;
-  position: absolute;
+  /* display: inline-block; */
+  /* position: absolute; */
   width: 26px;
   height: 26px;
   left: 0;
@@ -2232,9 +2232,9 @@ textarea.form-control {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 1px solid #E3E3E3;
+  /* border: 1px solid #E3E3E3;
   display: inline-block;
-  position: absolute;
+  position: absolute; */
   left: 3px;
   top: 3px;
   padding: 1px;
@@ -3204,18 +3204,12 @@ Created using IcoMoon - icomoon.io
 
 .contains-all{
   display: flex;
-  justify-content: center;
   flex-direction: row;
-  align-items: center;
 }
 
-/* .container-profile-2{
-  background-color: yellow;
+.titles-signup{
+  font-size: 17px;
 }
-
-.container-profile-1{
-  background-color: blue;
-} */
 
 .signup-container{
   width: 450px;
@@ -3943,7 +3937,7 @@ img {
     clear: both;
     content: " "; }
 
-.card {
+/* .card {
   border: 0;
   border-radius: 0.1875rem;
   display: inline-block;
@@ -3971,9 +3965,9 @@ img {
   .card[data-background-color="blue"] {
     background-color: #2CA8FF; }
   .card[data-background-color="green"] {
-    background-color: #15b60d; }
+    background-color: #15b60d; } */
 
-.card-plain {
+/* .card-plain {
   background: transparent;
   box-shadow: none; }
   .card-plain .card-body,
@@ -3982,7 +3976,7 @@ img {
     padding-right: 5px; }
   .card-plain .card-header:after {
     width: 100%;
-    left: 0; }
+    left: 0; } */
 
 .card-signup {
   max-width: 350px;
@@ -4080,8 +4074,8 @@ img {
   color: #FFFFFF; }
 
 .photo-container {
-  width: 123px;
-  height: 123px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto;
@@ -4190,7 +4184,7 @@ img {
   content: "";
   background-color: rgba(0, 0, 0, 0.5); }
 
-.login-page .card-login {
+/* .login-page .card-login {
   border-radius: 0.25rem;
   padding-bottom: 0.7rem;
   max-width: 320px; }
@@ -4275,7 +4269,7 @@ img {
   .login-page .card-login.card-plain .input-group-text,
   .login-page .card-login.card-plain .form-group.no-border .input-group-text,
   .login-page .card-login.card-plain .input-group.no-border .input-group-text {
-    color: rgba(255, 255, 255, 0.8); }
+    color: rgba(255, 255, 255, 0.8); } */
 
 .login-page .link {
   font-size: 10px;

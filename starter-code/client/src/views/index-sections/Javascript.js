@@ -24,7 +24,7 @@ function Javascript(props) {
                       type="submit"
                         block
                         className="btn-round"
-                        color="info"
+                        color='primary'
                         size="lg"
                     >
                     Get Started
@@ -40,7 +40,7 @@ function Javascript(props) {
                      type="submit"
                       block
                       className="btn-round"
-                      color="info"
+                      color='primary'
                       size="lg"
                     onClick={() => setModal1(true)}
                   >

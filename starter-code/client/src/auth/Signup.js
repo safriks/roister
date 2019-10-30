@@ -20,6 +20,7 @@ import {
   InputGroupAddon,
   InputGroupText,
   InputGroup,
+  Button,
   Container,
   Col,
   CardTitle,
@@ -66,6 +67,7 @@ export default class Signup extends Component {
        return (
         <>
         <ExamplesNavbar/>
+
         <div className="page-header clear-filter" filter-color="blue">
           <div
             className="page-header-image"
@@ -73,6 +75,8 @@ export default class Signup extends Component {
                 backgroundImage: "url(" + require("assets/img/alexander1.jpg") + ")"
               }}
           ></div>
+          
+          
         <div className="all">
                 <div className="text-center">
                   <CardTitle className="title-up" tag="h3">Create your Profile</CardTitle>
@@ -80,9 +84,13 @@ export default class Signup extends Component {
                 <Container>
                   <Col className="ml-auto mr-auto" md="4">
                     <Card className="card-login card-plain">
-                      <form onSubmit={this.handleSubmit} className="form">
+
+                    
+                      
                       <div className='contains-all'>         
+                      
                         <div className='container-profile-1'>
+                        <form onSubmit={this.handleSubmit} className="form">
                         <CardBody>
                           <InputGroup 
                             className={
@@ -196,10 +204,12 @@ export default class Signup extends Component {
                               ></Input>
                             </InputGroup>
                             </CardBody>
+                            </form>
                             </div>
                             <div className='container-profile-2'>
+                            <form onSubmit={this.handleSubmit} className="form">
                             <CardBody>
-                            <label>Skills</label>
+                            <label className='titles-signup'>Skills</label>
                             <InputGroup
                               className={
                                 "no-border input-lg"
@@ -216,10 +226,11 @@ export default class Signup extends Component {
                               placeholder="Skills"
                               type="skills"
                               required name="skills"
+                              className='second-input-form'
                               ></Input>
                             </InputGroup>
 
-                            <label>Job Position</label>
+                            <label className='titles-signup'>Job Position</label>
                             <InputGroup
                               className={
                                 "no-border input-lg"
@@ -238,7 +249,7 @@ export default class Signup extends Component {
                               ></Input>
                             </InputGroup>
 
-                            <label>About Me</label>
+                            <label className='titles-signup'>About Me</label>
                             <InputGroup
                               className={
                                 "no-border input-lg"
@@ -257,12 +268,21 @@ export default class Signup extends Component {
                               ></Input>
                             </InputGroup>
                             </CardBody>
+                            </form>
                             </div> 
-                          
+                           
                           </div>
-                          
+                         
                           <CardFooter className="text-center">
-                          <Javascript errorMessage={this.state.errorMessage}/> 
+                        <Button
+                        type="submit"
+                        block
+                        className="btn-round"
+                        color='primary'
+                        size="lg"
+                         >
+                        Create Profile
+                       </Button>
                             <div>
                             <h6>
                                 <Link to={"/Login"}
@@ -272,15 +292,16 @@ export default class Signup extends Component {
                                 </Link>
                               </h6>
                             </div>
-  
                           </CardFooter>
                           
-                        </form>
+                          
+                        
                       </Card>
                     </Col>
                   </Container>
                 </div>
               </div>
+
             </>
        )
    }

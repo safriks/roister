@@ -6,7 +6,6 @@ import Login from "./auth/Login";
 import Signup from "./auth/Signup";
 import Profile from "./components/Profile"
 import Project from "./components/Project"
-import CreateProfile from "./components/CreateProfile"
 import CreateProject from "./components/CreateProject"
 import Sendreset from "./auth/Send-reset"
 import NucleoIcons from "./views/index-sections/NucleoIcons"
@@ -27,7 +26,6 @@ class App extends Component {
             <Route exact path="/Signup" component={Signup} />
             <Route exact path="/Profile" component={Profile} />
             <Route exact path="/Project" component={Project} />
-            <Route exact path="/Create" component={CreateProfile} />
             <Route exact path="/Send-reset" component={Sendreset} />
             <Route exact path="/CreateProject" component={CreateProject} />
             <Route exact path="/icons" component={NucleoIcons} />
