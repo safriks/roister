@@ -2,20 +2,11 @@ const express = require("express");
 const Project= require("../models/project");
 const uploadCloud = require('../config/cloudinary.js');
 const router = express.Router();
-
-// var upload = multer({ dest: `${__dirname}/../uploads/` });
-
-var multer  = require('multer');
-const storage = multer.diskStorage({
-    destination: `${__dirname}/../uploads/`,
-    filename(req, file, cb) {
-      cb(null, `${new Date()}-${file.originalname}`);
-    },
-  });
-  
-const upload = multer({ storage });
+const mongoose = require("mongoose");
 
 router.post('/createproject', uploadCloud.single('picture'), function (req, res) {
+    
+    console.log(req.session.user)
       Project.create({
           name: req.body.name, 
           location: req.body.location,
@@ -24,8 +15,8 @@ router.post('/createproject', uploadCloud.single('picture'), function (req, res)
           tags: req.body.tags,
           financing: req.body.financing,
           timing: req.body.timing,
-          picture: req.file.picture,
-          userId: mongoose.Types.ObjectId(req.body.userId)
+          picture: req.file.url,
+          userId: mongoose.Types.ObjectId(req.session.user._id)
         })
         .then(()=> {
             res.send("uploaded!")
@@ -35,14 +26,5 @@ router.post('/createproject', uploadCloud.single('picture'), function (req, res)
         })
 })
 
-router.get("/createproject", (req, res)=> {
-    Project.find()
-        .then((createproject)=> {
-            res.render("createproject", {createproject})
-        })
-        .catch((err)=> {
-            res.send("err", err)
-        })
-})
 
 module.exports = router;

@@ -58,9 +58,8 @@ function Javascript(props) {
                         <h4 className="title title-up">Oops! Something went wrong</h4>
                       </div>
                     <ModalBody>
-                      <p>
-                     {props.errorMessage}. Try again or click on "Need Help?" to reset it.
-                      </p>
+                      <p>{props.errorMessage}.</p>
+                     <p>Try again or click on "FORGOT YOUR PASSWORD?" to reset it.</p>
                     </ModalBody>
                       <div className="modal-footer">
                         <Button

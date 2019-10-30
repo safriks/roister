@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import axios from "axios";
-import qs from "qs";
 import { Link } from "react-router-dom";
 import ExamplesNavbar from "../components/Navbars/ExamplesNavbar.js";
 import Javascript from "../views/index-sections/Javascript.js";
@@ -29,7 +27,8 @@ import {
 export default class Signup extends Component {
    constructor(props){
        super(props)
-
+       this.formRef = React.createRef();
+       this.handleInputUpload = this.handleInputUpload.bind(this);
        this.handleChange = this.handleChange.bind(this);
        this.handleSubmit = this.handleSubmit.bind(this);
     } 
@@ -43,6 +42,7 @@ export default class Signup extends Component {
         skills: "",
         jobposition: "",
         aboutme: "",
+        picture:"",
         errorMessage:""
     }
        
@@ -53,8 +53,9 @@ export default class Signup extends Component {
    }
 
    handleSubmit(e) {
+    var formData = new FormData(this.formRef.current);
     e.preventDefault();
-    signup(this.state)
+    signup(formData)
       .then((response)=> {
         this.props.history.push("/");
       })
@@ -62,6 +63,14 @@ export default class Signup extends Component {
         this.setState({errorMessage: error.response.data});
       })
  }
+
+ handleInputUpload(e){
+  const data = new FormData();
+    data.append('file', e.target.files[0]);
+    data.append('name', 'some value user types');
+    data.append('description', 'some value user types');
+    this.setState({picture: data})
+}
 
    render() {
        return (
@@ -84,9 +93,7 @@ export default class Signup extends Component {
                 <Container>
                   <Col className="ml-auto mr-auto" md="4">
                     <Card className="card-login card-plain">
-
-                    
-                      
+                      <form onSubmit={this.handleSubmit} className="form" encType="multipart/form-data" ref={this.formRef}>
                       <div className='contains-all'>         
                       
                         <div className='container-profile-1'>
@@ -267,6 +274,12 @@ export default class Signup extends Component {
                               required name="aboutme"
                               ></Input>
                             </InputGroup>
+                            <Input 
+                              onChange={(e) => this.handleInputUpload(e)}  
+                              placeholder="Upload a picture"  
+                              type="file" 
+                              required name="picture"
+                            ></Input>
                             </CardBody>
                             </form>
                             </div> 
@@ -295,7 +308,7 @@ export default class Signup extends Component {
                           </CardFooter>
                           
                           
-                        
+                        </form>
                       </Card>
                     </Col>
                   </Container>

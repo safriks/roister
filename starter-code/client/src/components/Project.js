@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from "axios";
+import instance from "../auth/customAxios";
 
 export default class Project extends Component {
 
@@ -12,8 +12,8 @@ export default class Project extends Component {
     componentDidMount(){
         let projectId = this.props.match.params.projectId
 
-        axios({
-            url: `${process.env.REACT_APP_API}}/${projectId}`,
+        instance({
+            url: `${process.env.REACT_APP_Server_API}}/${projectId}`,
             method: "GET"
         })
         .then((response)=> {
