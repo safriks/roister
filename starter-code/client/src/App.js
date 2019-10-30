@@ -26,7 +26,7 @@ class App extends Component {
             <Route exact path="/Signup" component={Signup} />
             <Route exact path="/Profile" component={Profile} />
             <Route exact path="/Project" component={Project} />
-            <Route exact path="/Create" component={CreateProfile} />
+            <Route exact path="/CreateProfile" component={CreateProfile} />
             <Route exact path="/CreateProject" component={CreateProject} />
             <Route exact path="/icons" component={NucleoIcons} />
           </header>

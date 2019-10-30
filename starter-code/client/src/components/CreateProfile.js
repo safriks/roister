@@ -52,7 +52,7 @@ handleSubmit(e) {
     e.preventDefault(); 
     let user = JSON.parse(localStorage.getItem('user'));
     axios({
-        url: "https://localhost:3001/profile/create",
+        url: "https://localhost:3001/createprofile",
         data: this.state,
         method: "POST"
     })
@@ -85,7 +85,7 @@ render(){
           <div >
             <img className="photo-container" alt="..." src={require("assets/img/icons-profile.png")}></img>
           </div>
-          <h4 className="title">Welcome!</h4>
+          <h4 className="title">Welcome {this.state.username}!</h4>
           <h5 className="title">Create your profile</h5>
         </Container>
       </div>

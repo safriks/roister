@@ -50,102 +50,101 @@ export default class Login extends Component {
       e.preventDefault();
       login(this.state)
         .then((response)=> {
-          this.props.history.push("/createproject");
+          this.props.history.push("/");
         })
         .catch((error)=> {
           this.setState({errorMessage: error.response.data});
         })
    }
       
-
-    render() {
-      return (
-        <>
-        <ExamplesNavbar/>
-          <div className="page-header clear-filter" filter-color="blue">
-            <div
-              className="page-header-image"
-              style={{
-                backgroundImage: "url(" + require("assets/img/login.jpg") + ")"
-              }}
-            ></div>
-            <div className="all">
-              <div>
-                <p className='roister-name'>ROISTER</p>
-              </div>
-              <div>
-                <p className='roister-para'>Welcome to the world's most innovative network of entrepreneurs</p>
-              </div>
-                <Container>
-                  <Col className="ml-auto mr-auto" md="4">
-                    <Card className="card-login card-plain">
-                      <form onSubmit={this.handleSubmit} className="form">
-                        <CardBody>
+  render() {
+    return (
+      <>
+      <ExamplesNavbar/>
+        <div className="page-header clear-filter" filter-color="blue">
+          <div className="page-header-image" style={{backgroundImage: "url(" + require("assets/img/login.jpg") + ")"}}>
+          </div>
+          <div className="all">
+            <div>
+              <p className='roister-name'>ROISTER</p>
+            </div>
+            <div>
+              <p className='roister-para'>Welcome to the world's most innovative network of entrepreneurs</p>
+            </div>
+              <Container>
+                <Col className="ml-auto mr-auto" md="4">
+                  <Card className="card-login card-plain">
+                    <form onSubmit={this.handleSubmit} className="form">
+                      <CardBody>
+                        <InputGroup
+                          className={
+                            "no-border input-lg" 
+                          }
+                        >
+                          <InputGroupAddon addonType="prepend">
+                            <InputGroupText>
+                              <i className="now-ui-icons users_circle-08"></i>
+                            </InputGroupText>
+                            </InputGroupAddon>
+                            <Input 
+                            onChange={this.handleChange}
+                            value={this.state.username}
+                            placeholder="username"
+                            type="text" 
+                            required name="username"
+                            />
+                          </InputGroup>
                           <InputGroup
                             className={
-                              "no-border input-lg" 
+                              "no-border input-lg"
                             }
                           >
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
-                                <i className="now-ui-icons users_circle-08"></i>
+                                <i className="now-ui-icons text_caps-small"></i>
                               </InputGroupText>
-                              </InputGroupAddon>
-                              <Input 
-                              onChange={this.handleChange}
-                              value={this.state.username}
-                              placeholder="username"
-                              type="text" 
-                              required name="username"
-                              />
-                            </InputGroup>
-                            <InputGroup
-                              className={
-                                "no-border input-lg"
-                              }
-                            >
-                              <InputGroupAddon addonType="prepend">
-                                <InputGroupText>
-                                  <i className="now-ui-icons text_caps-small"></i>
-                                </InputGroupText>
-                              </InputGroupAddon>
-                              
-                              <Input onChange={this.handleChange} value={this.state.password} placeholder="password"  type="password" required name="password"/>
+                            </InputGroupAddon>
+                            <Input 
+                            onChange={this.handleChange} 
+                            value={this.state.password} 
+                            placeholder="password"  
+                            type="password" 
+                            required name="password"
+                            />
+                          </InputGroup>
+                        </CardBody>
+                        <CardFooter className="text-center">
 
-                            </InputGroup>
-                          </CardBody>
-                          <CardFooter className="text-center">
-
-                          <Javascript errorMessage={this.state.errorMessage}/>
-                            
-                            <div className="pull-left">
-                              <h6>
-                                <Link to={"/Signup"}
-                                  className="link1"                        
-                                >
-                                  Create Account  
-                                </Link>
-                              </h6>
-                            </div>
-                            <div className="pull-right">
-                              <h6>
-                                <a
-                                  className="link1"
-                                  href="#"
-                                  onClick={e => e.preventDefault()}
-                                >
-                                  Need Help?
-                                </a>
-                              </h6>
-                            </div>
-                          </CardFooter>
-                          </form>
-                      </Card>
-                    </Col>
-                  </Container>
-                </div>
+                        <Javascript 
+                        errorMessage={this.state.errorMessage}
+                        />
+                          
+                          <div className="pull-left">
+                            <h6>
+                              <Link to={"/Signup"}
+                                className="link1"
+                                >Create Account  
+                              </Link>
+                            </h6>
+                          </div>
+                          <div className="pull-right">
+                            <h6>
+                              <a
+                                className="link1"
+                                href="#"
+                                onClick={e => e.preventDefault()}
+                              >Need Help?
+                              </a>
+                            </h6>
+                          </div>
+                        </CardFooter>
+                        </form>
+                    </Card>
+                  </Col>
+                </Container>
               </div>
-            </>
-       )
-   }
+            </div>
+          </>
+      )
+  }
 }

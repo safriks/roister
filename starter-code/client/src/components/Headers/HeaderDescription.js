@@ -5,9 +5,7 @@ import '../../assets/css/now-ui-kit.css';
 import '../../assets/css/now-ui-kit.css.map';
 import '../../assets/css/now-ui-kit.min.css';
 
-
 import {
-  Input,
   Container,
   Row,
   Col,

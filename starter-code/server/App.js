@@ -63,9 +63,9 @@ var corsOptions = {
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 }
 app.use(cors(corsOptions))
-app.use('/', require('./routes/auth'));
+app.use('/auth', require('./routes/auth'));
 app.use('/', require('./routes/createproject'));
-// app.use('/', require('./routes/landing-page'));
+app.use('/', require('./routes/landing-page'));
 // app.use('/', require('./routes/profile'));
 
 
