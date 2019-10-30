@@ -17,6 +17,7 @@ import {
 export default class CreateProfile extends Component {
     constructor(props){
         super(props);
+        this.formRef = React.createRef();
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -51,9 +52,14 @@ handleChange(e){
 handleSubmit(e) {
     e.preventDefault(); 
     let user = JSON.parse(localStorage.getItem('user'));
+    let formData = new FormData(this.formRef.current); 
     axios({
         url: "https://localhost:3001/createprofile",
         data: this.state,
+        data1: formData,
+            headers: {
+                'content-type': 'multipart/form-data'
+            },     
         method: "POST"
     })
     .then((response)=> {
@@ -77,12 +83,13 @@ render(){
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/jan.jpg") + ")"
+            backgroundImage: "url(" + require("assets/img/alexander.jpg") + ")"
           }}
           
         ></div>
         <Container>
           <div >
+
             <img className="photo-container" alt="..." src={require("assets/img/icons-profile.png")}></img>
           </div>
           <h4 className="title">Welcome {this.state.username}!</h4>
@@ -118,41 +125,17 @@ render(){
               Follow me on Instagram
             </UncontrolledTooltip>
           </div>
+          <form onSubmit={this.handleSubmit} ref={this.formRef}>
           <h3 className="title">Location</h3>
-          <input 
-          onChange={this.handleChange} 
-          value={this.state.location} 
-          placeholder="Location"  
-          type="text" 
-          name="location"/>
+         
           <h3 className="title">Skills</h3>
-          <input 
-          onChange={this.handleChange} 
-          value={this.state.skills} 
-          placeholder='Skills'  
-          type="text" 
-          name='skills'/>
+          
           <h3 className="title">About me</h3>
-          <input 
-          onChange={this.handleChange} 
-          value={this.state.aboutme} 
-          placeholder="About Me"  
-          type="text" 
-          name="aboutme"/>
+          
           <h3 className="title">Job Position</h3>
-          <input 
-          onChange={this.handleChange} 
-          value={this.state.jobposition} 
-          placeholder='Job Position'  
-          type="text" 
-          name='degree'/>
+          
           <h3 className="title">Degree</h3>
-          <input 
-          onChange={this.handleChange} 
-          value={this.state.Degree} 
-          placeholder='Degree'  
-          type="text" 
-          name='degree'/>
+          
           <Row>
             <Col className="ml-auto mr-auto" md="6">
               <h4 className="title text-center">My Portfolio</h4>
@@ -203,9 +186,10 @@ render(){
           >
           Create Profile
           </button>
+          </form>
         </Container>
       </div>
-      <DefaultFooter />
+      <DefaultFooter/>
     </div>
   </>
     )  

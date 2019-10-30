@@ -19,7 +19,7 @@ router.post("/signup", (req,res)=> {
                             lastname: req.body.lastname
                         })
                         .then((user)=> {
-                            debugger
+                           
                             req.session.user = user
                             res.send({user})
                         })

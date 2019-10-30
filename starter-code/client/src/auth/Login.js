@@ -118,7 +118,6 @@ export default class Login extends Component {
                         <Javascript 
                         errorMessage={this.state.errorMessage}
                         />
-                          
                           <div className="pull-left">
                             <h6>
                               <Link to={"/Signup"}
@@ -129,12 +128,11 @@ export default class Login extends Component {
                           </div>
                           <div className="pull-right">
                             <h6>
-                              <a
-                                className="link1"
-                                href="#"
-                                onClick={e => e.preventDefault()}
-                              >Need Help?
-                              </a>
+                            <Link to={"/Send-reset"}                             
+                                  className="link1"
+                                >
+                                  Forgot your password?
+                                </Link>
                             </h6>
                           </div>
                         </CardFooter>
