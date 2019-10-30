@@ -2,8 +2,10 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt")
 const User = require("../models/user");
+const uploadCloud = require('../config/cloudinary.js');
+const mongoose = require("mongoose");
 
-router.post("/signup", (req,res)=> {
+router.post("/signup", uploadCloud.single('picture'), function (req,res) {
     User.findOne({$or: [{username: req.body.username, email: req.body.email}]})
         .then((user)=> {
             if(user) res.send("Email or username is already taken")
@@ -16,10 +18,13 @@ router.post("/signup", (req,res)=> {
                             password: hash,
                             email: req.body.email,
                             firstname: req.body.firstname,
-                            lastname: req.body.lastname
+                            lastname: req.body.lastname,
+                            picture: req.file.url, 
+                            skills: req.body.skills,
+                            aboutme: req.body.aboutme, 
+                            jobposition: req.body.jobposition
                         })
                         .then((user)=> {
-                           
                             req.session.user = user
                             res.send({user})
                         })

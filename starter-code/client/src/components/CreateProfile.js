@@ -66,9 +66,8 @@ handleSubmit(e) {
         this.props.history.push(`/profile/${response.data._id}`)
     })
     .catch((error)=> {
-        
-    })
     
+    })
 }
 
 render(){
