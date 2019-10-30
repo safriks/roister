@@ -1,6 +1,5 @@
 require('dotenv').config();
 require('./models/user');
-require('./models/profile');
 require('./models/project');
 
 const bodyParser = require('body-parser');
@@ -65,10 +64,7 @@ var corsOptions = {
 app.use(cors(corsOptions))
 app.use('/auth', require('./routes/auth'));
 app.use('/', require('./routes/createproject'));
-app.use('/', require('./routes/landing-page'));
 require('./routes/forgotPassword')(app);
-// app.use('/', require('./routes/profile'));
-
 
 module.exports = app;
 

@@ -10,14 +10,17 @@ import 'assets/css/now-ui-kit.min.css'
 import ExamplesNavbar from "../components/Navbars/ExamplesNavbar.js";
 
 import {
+  Button,
   Card,
-  CardHeader,
-  CardFooter,
   CardTitle,
+  CardBody,
+  CardFooter,
   Input,
+  InputGroup,
   InputGroupAddon,
   InputGroupText,
-  Row
+  Container,
+  Col,
 } from "reactstrap";
 
 export default class Sendreset extends Component {
@@ -43,11 +46,13 @@ export default class Sendreset extends Component {
                showError: false,
                messegeFromServer: ''
            });
+
        } else{
            axios
            .post('http://localhost:3001/forgotPassword', {
                email: this.state.email,
            })
+
            .then(response =>{
                console.log(response);
                if(response.data === 'email not in db'){
@@ -56,12 +61,13 @@ export default class Sendreset extends Component {
                        messageFromServer: '',
                   })
                }
-               else if(response.data === 'recovery email sent'){
-               this.setState({            
-                    showError: false,
-                    messageFromServer: 'recovery email sent',
-               })
-            }
+
+        else if(response.data === 'recovery email sent'){
+        this.setState({            
+            showError: false,
+            messageFromServer: 'recovery email sent',
+        })
+    }
            })
            .catch(error => {
                console.log(error.data)
@@ -69,59 +75,141 @@ export default class Sendreset extends Component {
        }
    }
 
-   render() {
-       const {email, messageFromServer, showNullError, showError} = this.state;
-       return (
-        <>
-        <ExamplesNavbar/>
-        <div
-        className="section section-signup"
-        style={{
-          backgroundImage: "url(" + require("assets/img/unsplash.jpg") + ")",
-          backgroundSize: "cover",
-          backgroundPosition: "top center",
-          minHeight: "700px"
-       }}
-        >
-        <div className='signup-container'>
-          <Row>
-            <Card className="form-container-signup" data-background-color="blue">
+//    render() {
+//        const {email, messageFromServer, showNullError, showError} = this.state;
+//        return (
+//         <>
+//         <ExamplesNavbar/>
+//         <div
+//         className="section section-signup"
+//         style={{
+//           backgroundImage: "url(" + require("assets/img/unsplash.jpg") + ")",
+//           backgroundSize: "cover",
+//           backgroundPosition: "top center",
+//           minHeight: "700px"
+//        }}
+//         >
+//         <div className='signup-container'>
+//           <Row>
+//             <Card className="form-container-signup" data-background-color="blue">
 
-              <form onSubmit={this.sendEmail}>
+//               <form onSubmit={this.sendEmail}>
 
-              <div className='form-all'>
-                <CardHeader className="text-center">
-                  <CardTitle className="title-up" tag="h3">Reset your Password</CardTitle>
-                  </CardHeader>
-                  <h4 className='enter-text'>Enter your email address and we'll send you a link to reset your password.</h4>
+//               <div className='form-all'>
+//                 <CardHeader className="text-center">
+//                   <CardTitle className="title-up" tag="h3">Reset your Password</CardTitle>
+//                   </CardHeader>
+//                   <h4 className='enter-text'>Enter your email address and a link to reset your password will be sended to you.</h4>
                 
-                <div class='signup-form'>
-                <InputGroupAddon className='inputs-signin' addonType="prepend">                   
-                      <div className='input-space'> 
-                      <InputGroupText>
-                        <i className="now-ui-icons ui-1_email-85"></i>
-                      </InputGroupText>    
-                      </div>               
-                    <Input
-                        onChange={this.handleChange('email')} 
-                        type="text"      
-                        required name='email'                         
-                        value={email} 
-                        placeholder="Email"             
-                    ></Input>     
-                    </InputGroupAddon>             
+//                 <div className='signup-form'>
+//                 <InputGroupAddon className='inputs-signin' addonType="prepend">                   
+//                       <div className='input-space'> 
+//                       <InputGroupText>
+//                         <i className="now-ui-icons ui-1_email-85"></i>
+//                       </InputGroupText>    
+//                       </div>               
+//                     <Input
+//                         onChange={this.handleChange('email')} 
+//                         type="text"      
+//                         required name='email'                         
+//                         value={email} 
+//                         placeholder="Email"             
+//                     ></Input>     
+//                     </InputGroupAddon>             
+//                 </div>
+//                 <CardFooter className="text-center">
+//                   <button
+//                     onChange={this.handleChange('email')} 
+//                     className="btn-neutral btn-round"
+//                     color="info"
+//                     type= 'submit'
+//                     size="lg" >
+//                     Send Email
+//                   </button>
+//                 </CardFooter>
+//                 </div>
+//               </form>
+//               {showNullError && (
+//                   <div>
+//                       <p>The email address cannot be null</p>
+//                   </div>
+//               )}
+//               {showError && (
+//                   <div>
+//                       <p>That email address isn't recognised. Please try again or register for a new account.</p>
+//                   </div>
+//               )}
+//               {messageFromServer === 'recovery email sent' && (
+//                   <div className='email-sent-container'>
+//                       <h4 className='email-sent-text'>Email sent to your email address.</h4>
+//                       <p className='email-sent-text text-p'>Check the link we've sent you. If you didn't request this, you can ignore this email and no changes will be made in your account.</p>
+//                   </div>
+//               )}
+//             </Card>
+//           </Row>
+//         </div>
+//       </div>
+//     </>
+//   );
+// }
+// }
+
+render() {
+  const {email, messageFromServer, showNullError, showError} = this.state;
+  return (
+   <>
+   <ExamplesNavbar/>
+   <div className="page-header clear-filter" filter-color="blue">
+     <div
+       className="page-header-image"
+       style={{
+           backgroundImage: "url(" + require("assets/img/alexander1.jpg") + ")"
+         }}
+     ></div>
+   <div className="all">
+           <div className="text-center">
+             <CardTitle className="title-up" tag="h3">Reset your Password</CardTitle>
+             <h4 className='enter-text'>Enter your email address and a link to reset your password will be sended to you.</h4>
+           </div>
+           <Container>
+             <Col className="ml-auto mr-auto" md="4">
+               <Card className="card-login card-plain">
+                 <form onSubmit={this.handleSubmit} className="form">
+                 <div className='contains-all'>         
+                   <div className='container-profile-1'>
+                   <CardBody>
+                       <InputGroup
+                         className={
+                           "no-border input-lg"
+                         }
+                       >
+                         <InputGroupAddon addonType="prepend">
+                           <InputGroupText>
+                            <i className="now-ui-icons ui-1_email-85"></i> 
+                           </InputGroupText>
+                         </InputGroupAddon>
+                         <Input 
+                            onChange={this.handleChange('email')}
+                            type="text"
+                            vrequired name='email'                         
+                            value={email} 
+                            placeholder="Email"      
+                         ></Input>
+                        </InputGroup>
+                    </CardBody>
+                  </div>
                 </div>
+                     
                 <CardFooter className="text-center">
-                  <button
+                  <Button
                     onChange={this.handleChange('email')} 
-                    className="btn-neutral btn-round"
-                    color="info"
+                    className="btn-round"
+                    color="primary"
                     type= 'submit'
                     size="lg" >
                     Send Email
-                  </button>
+                  </Button>
                 </CardFooter>
-                </div>
               </form>
               {showNullError && (
                   <div>
@@ -140,10 +228,10 @@ export default class Sendreset extends Component {
                   </div>
               )}
             </Card>
-          </Row>
-        </div>
+          </Col>
+        </Container>
       </div>
-    </>
-  );
-}
-}
+    </div>
+  </>
+);
+}}
