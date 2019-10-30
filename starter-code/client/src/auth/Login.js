@@ -98,6 +98,7 @@ export default class Login extends Component {
                               required name="username"
                               />
                             </InputGroup>
+                            
                             <InputGroup
                               className={
                                 "no-border input-lg"
@@ -109,7 +110,12 @@ export default class Login extends Component {
                                 </InputGroupText>
                               </InputGroupAddon>
                               
-                              <Input onChange={this.handleChange} value={this.state.password} placeholder="password"  type="password" required name="password"/>
+                              <Input 
+                              onChange={this.handleChange} 
+                              value={this.state.password} 
+                              placeholder="password"  
+                              type="password" 
+                              required name="password"/>
 
                             </InputGroup>
                           </CardBody>
