@@ -39,6 +39,9 @@ export default class Signup extends Component {
         lastname: "",
         email: "",
         password: "",
+        skills: "",
+        jobposition: "",
+        aboutme: "",
         errorMessage:""
     }
        
@@ -66,17 +69,22 @@ export default class Signup extends Component {
         <div className="page-header clear-filter" filter-color="blue">
           <div
             className="page-header-image"
+            style={{
+                backgroundImage: "url(" + require("assets/img/alexander1.jpg") + ")"
+              }}
           ></div>
         <div className="all">
                 <div className="text-center">
-                  <CardTitle className="title-up" tag="h3">Sign Up</CardTitle>
+                  <CardTitle className="title-up" tag="h3">Create your Profile</CardTitle>
                 </div>
                 <Container>
                   <Col className="ml-auto mr-auto" md="4">
                     <Card className="card-login card-plain">
                       <form onSubmit={this.handleSubmit} className="form">
+                      <div className='contains-all'>         
+                        <div className='container-profile-1'>
                         <CardBody>
-                          <InputGroup
+                          <InputGroup 
                             className={
                               "no-border input-lg" 
                             }
@@ -89,11 +97,12 @@ export default class Signup extends Component {
                             <Input 
                             onChange={this.handleChange} 
                             value={this.state.firstname} 
-                            placeholder="Firstname" 
+                            placeholder="First Name" 
                             type="text" 
                             required name="firstname"
                             ></Input>
                             </InputGroup>
+
                             <InputGroup
                               className={
                                 "no-border input-lg"
@@ -107,11 +116,12 @@ export default class Signup extends Component {
                               <Input 
                               onChange={this.handleChange}
                               value={this.state.lastname}
-                              placeholder="Lastname"
+                              placeholder="Last Name"
                               type="lastname"
                               required name="lastname"
                               ></Input>
                             </InputGroup>
+
                             <InputGroup
                               className={
                                 "no-border input-lg"
@@ -119,7 +129,7 @@ export default class Signup extends Component {
                             >
                             <InputGroupAddon addonType="prepend">
                                 <InputGroupText>
-                                  <i className="now-ui-icons text_caps-small"></i>
+                                  <i className="now-ui-icons ui-1_email-85"></i>
                                 </InputGroupText>
                               </InputGroupAddon>
                               <Input 
@@ -148,6 +158,7 @@ export default class Signup extends Component {
                               required name="username"
                               ></Input>
                             </InputGroup>
+
                             <InputGroup
                               className={
                                 "no-border input-lg"
@@ -166,10 +177,93 @@ export default class Signup extends Component {
                               required name="password"
                               ></Input>
                             </InputGroup>
-                          </CardBody>
+
+                            <InputGroup
+                              className={
+                                "no-border input-lg"
+                              } >                          
+                              <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                  <i className="now-ui-icons objects_globe"></i>
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              <Input 
+                              onChange={this.handleChange}
+                              value={this.state.location}
+                              placeholder="Location"
+                              type="location"
+                              required name="location"
+                              ></Input>
+                            </InputGroup>
+                            </CardBody>
+                            </div>
+                            <div className='container-profile-2'>
+                            <CardBody>
+                            <label>Skills</label>
+                            <InputGroup
+                              className={
+                                "no-border input-lg"
+                              } >                         
+                              <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                  <i className="now-ui-icons sport_trophy"></i>
+                                </InputGroupText>
+                              </InputGroupAddon>
+                              
+                              <Input 
+                              onChange={this.handleChange}
+                              value={this.state.skills}
+                              placeholder="Skills"
+                              type="skills"
+                              required name="skills"
+                              ></Input>
+                            </InputGroup>
+
+                            <label>Job Position</label>
+                            <InputGroup
+                              className={
+                                "no-border input-lg"
+                              } >                         
+                              <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                  <i className="now-ui-icons education_agenda-bookmark"></i>
+                                </InputGroupText>
+                              </InputGroupAddon>                          
+                              <Input 
+                              onChange={this.handleChange}
+                              value={this.state.jobposition}
+                              placeholder="Job Position"
+                              type="jobposition"
+                              required name="jobposition"
+                              ></Input>
+                            </InputGroup>
+
+                            <label>About Me</label>
+                            <InputGroup
+                              className={
+                                "no-border input-lg"
+                              } >                         
+                              <InputGroupAddon addonType="prepend">
+                                <InputGroupText>
+                                  <i className="now-ui-icons education_glasses"></i>
+                                </InputGroupText>
+                              </InputGroupAddon>                          
+                              <Input 
+                              onChange={this.handleChange}
+                              value={this.state.aboutme}
+                              placeholder="About Me"
+                              type="aboutme"
+                              required name="aboutme"
+                              ></Input>
+                            </InputGroup>
+                            </CardBody>
+                            </div> 
+                          
+                          </div>
+                          
                           <CardFooter className="text-center">
                           <Javascript errorMessage={this.state.errorMessage}/> 
-                            <div className="pull-left">
+                            <div>
                             <h6>
                                 <Link to={"/Login"}
                                   className="link1"                        
@@ -178,18 +272,9 @@ export default class Signup extends Component {
                                 </Link>
                               </h6>
                             </div>
-                            <div className="pull-right">
-                              <h6>
-                                <a
-                                  className="link1"
-                                  href="#"
-                                  onClick={e => e.preventDefault()}
-                                >
-                                  Need Help?
-                                </a>
-                              </h6>
-                            </div>
+  
                           </CardFooter>
+                          
                         </form>
                       </Card>
                     </Col>

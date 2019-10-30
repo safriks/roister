@@ -65,7 +65,7 @@ export default class Login extends Component {
             <div
               className="page-header-image"
               style={{
-                backgroundImage: "url(" + require("assets/img/venture.jpg") + ")"
+                backgroundImage: "url(" + require("assets/img/austin1.jpg") + ")"
               }}
             ></div>
             <div className="all">

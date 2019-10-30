@@ -83,20 +83,16 @@ render(){
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/jan.jpg") + ")"
+            backgroundImage: "url(" + require("assets/img/alexander.jpg") + ")"
           }}
           
         ></div>
         <Container>
           <div >
-          <label>
-          <input type="file" name="picture"/>
-          Upload a profile picture
-          </label>
+
             <img className="photo-container" alt="..." src={require("assets/img/icons-profile.png")}></img>
           </div>
-          <h4 className="title">Welcome!</h4>
-          <h5 className="title">Create your profile</h5>
+         
         </Container>
       </div>
       <div className="section">
@@ -130,40 +126,15 @@ render(){
           </div>
           <form onSubmit={this.handleSubmit} ref={this.formRef}>
           <h3 className="title">Location</h3>
-          <input 
-          onChange={this.handleChange} 
-          value={this.state.location} 
-          placeholder="Location"  
-          type="text" 
-          name="location"/>
+         
           <h3 className="title">Skills</h3>
-          <input 
-          onChange={this.handleChange} 
-          value={this.state.skills} 
-          placeholder='Skills'  
-          type="text" 
-          name='skills'/>
+          
           <h3 className="title">About me</h3>
-          <input 
-          onChange={this.handleChange} 
-          value={this.state.aboutme} 
-          placeholder="About Me"  
-          type="text" 
-          name="aboutme"/>
+          
           <h3 className="title">Job Position</h3>
-          <input 
-          onChange={this.handleChange} 
-          value={this.state.jobposition} 
-          placeholder='Job Position'  
-          type="text" 
-          name='degree'/>
+          
           <h3 className="title">Degree</h3>
-          <input 
-          onChange={this.handleChange} 
-          value={this.state.Degree} 
-          placeholder='Degree'  
-          type="text" 
-          name='degree'/>
+          
           <Row>
             <Col className="ml-auto mr-auto" md="6">
               <h4 className="title text-center">My Portfolio</h4>

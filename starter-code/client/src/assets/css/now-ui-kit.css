@@ -3170,6 +3170,7 @@ Created using IcoMoon - icomoon.io
   font-size: 0.7142em; }
 
 .link1{
+  text-align: center;
   color: white;
 }
 
@@ -3200,6 +3201,21 @@ Created using IcoMoon - icomoon.io
 .all{
   margin-top: 80px;
 }
+
+.contains-all{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* .container-profile-2{
+  background-color: yellow;
+}
+
+.container-profile-1{
+  background-color: blue;
+} */
 
 .signup-container{
   width: 450px;
