@@ -3,7 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcrypt")
 const User = require("../models/user");
 
-router.post("/auth/signup", (req,res)=> {
+router.post("/signup", (req,res)=> {
     User.findOne({$or: [{username: req.body.username, email: req.body.email}]})
         .then((user)=> {
             if(user) res.send("Email or username is already taken")
@@ -33,7 +33,7 @@ router.post("/auth/signup", (req,res)=> {
     })   
 
 
-router.post("/auth/login", (req,res)=> {
+router.post("/login", (req,res)=> {
     User.findOne({username: req.body.username})
         .then((user)=> {
             console.log(user)
@@ -56,7 +56,7 @@ router.post("/auth/login", (req,res)=> {
 })
 
 
-router.get("/auth/logout", (req, res)=> {
+router.get("/logout", (req, res)=> {
     console.log("logout req received")
     req.session.destroy();
     res.send("Logout successful");

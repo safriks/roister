@@ -11,8 +11,7 @@ const profileSchema = new Schema({
   jobposition: String, 
   skills: [String],
   aboutme: String, 
-
-  user: {type: moongose.Types.ObjectId, ref: "user"}
+  // user: {type: moongose.Types.ObjectId, ref: "user"}
 
 });
 

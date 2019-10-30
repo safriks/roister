@@ -54,7 +54,7 @@ handleSubmit(e) {
     let user = JSON.parse(localStorage.getItem('user'));
     let formData = new FormData(this.formRef.current); 
     axios({
-        url: "https://localhost:3001/profile/create",
+        url: "https://localhost:3001/createprofile",
         data: this.state,
         data1: formData,
             headers: {
@@ -92,7 +92,8 @@ render(){
 
             <img className="photo-container" alt="..." src={require("assets/img/icons-profile.png")}></img>
           </div>
-         
+          <h4 className="title">Welcome {this.state.username}!</h4>
+          <h5 className="title">Create your profile</h5>
         </Container>
       </div>
       <div className="section">

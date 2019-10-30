@@ -39,15 +39,15 @@ export default class Project extends Component {
                 {this.state.loading ? 
                     <img src="/loading.gif" alt=""/>:
                     <>
-                        <h3>{this.state.profile.name}</h3>
-                        <h3>{this.state.profile.location}</h3>
-                        <h3>{this.state.profile.tagline}</h3>
-                        <h3>{this.state.profile.description}</h3>
-                        <h3>{this.state.profile.tags}</h3>
-                        <p>{this.state.profile.financing}</p>
-                        <h3>{this.state.profile.timing}</h3>
-                        <h3>{this.state.profile.team}</h3>
-                        <p>{this.state.profile.picture}</p>
+                        <h3>{this.state.project.name}</h3>
+                        <h3>{this.state.project.location}</h3>
+                        <h3>{this.state.project.tagline}</h3>
+                        <h3>{this.state.project.description}</h3>
+                        <h3>{this.state.project.tags}</h3>
+                        <p>{this.state.project.financing}</p>
+                        <h3>{this.state.project.timing}</h3>
+                        <h3>{this.state.project.team}</h3>
+                        <p>{this.state.project.picture}</p>
                     </>
                 }
                 {this.state.error ? 

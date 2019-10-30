@@ -7,11 +7,11 @@ const projectSchema = new Schema({
   tagline: String, 
   description: String, 
   tags: String, 
-  // financing: String, 
-  // timing: String,
+  financing: String, 
+  timing: String,
   // team: String, 
   picture: String,
-  user: {type: mongoose.Types.ObjectId, ref: "user"}, 
+  // user: {type: mongoose.Types.ObjectId, ref: "user"}, 
 });
 
 const Project = mongoose.model("Project", projectSchema);
