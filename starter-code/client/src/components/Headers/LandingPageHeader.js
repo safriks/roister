@@ -25,10 +25,10 @@ function Home() {
 
   return (
     <>
-      <div className="page-header page-header-small">
+      <div className="page-header page-header-small" >
         <div 
           className="page-header-image" 
-          style={{backgroundImage: "url(" + require("../../assets/img/suter.jpg") + ")"}} 
+          style={{backgroundImage: "url(" + require("../../assets/img/simone.jpg") + ")"}} 
           ref={pageHeader}>
         </div>
           <div className="content-center">

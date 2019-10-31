@@ -57,7 +57,7 @@ export default class Signup extends Component {
     e.preventDefault();
     signup(formData)
       .then((response)=> {
-        this.props.history.push("/");
+        this.props.history.push("/Roister");
       })
       .catch((error)=> {
         this.setState({errorMessage: error.response.data});
@@ -264,13 +264,13 @@ export default class Signup extends Component {
                             ></input>
                           </InputGroup>
                           <Button className="btn-round">
-                  <Input 
-                    onChange={(e) => this.handleInputUploadProject(e)}  
-                    placeholder="Upload a picture"  
-                    type="file" 
-                    required name="picture"
-                  ></Input>
-                  </Button>
+                          <Input 
+                            onChange={(e) => this.handleInputUpload(e)}  
+                            placeholder="Upload a picture"  
+                            type="file" 
+                            required name="picture"
+                          ></Input>
+                          </Button>
                           </CardBody>
                           </div> 
                         </div>
@@ -278,7 +278,7 @@ export default class Signup extends Component {
               <Javascript errorMessage={this.state.errorMessage}/> 
                           <div className='text-center'>
                           <h6>
-                              <Link to={"/Login"}
+                              <Link to={"/"}
                                 className="link1"                        
                               >
                                 Already have an account? Login. 

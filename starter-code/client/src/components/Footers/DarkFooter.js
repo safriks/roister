@@ -12,7 +12,7 @@ function DarkFooter() {
           <ul>
             <li>
               <a
-                href="/"
+                href="/Roister"
                 target="_blank"
               >
                 About Us

@@ -141,7 +141,7 @@ function SignUp() {
             <Button
               className="btn-round btn-white"
               color="default"
-              to="/login-page"
+              to="/"
               outline
               size="lg"
               tag={Link}

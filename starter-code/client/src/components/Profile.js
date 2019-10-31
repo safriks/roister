@@ -3,13 +3,11 @@ import instance from "../auth/customAxios";
 import {Link} from 'react-router-dom';
 
 import {
-    Button,
     Nav,
     TabPane,
     Container,
     Row,
     Col,
-    UncontrolledTooltip
   } from "reactstrap";
 
  import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
@@ -77,9 +75,8 @@ render(){
             </a>
           </div>
           </div>        
-
           <div className='profile-details-container'>
-          <h4 className='title text-center'>Location</h4>
+          <h4 className='title text-center'>Location </h4>
           <h4>{this.state.user.location}</h4>
           <h4 className='title text-center'>Skills</h4>
           <h4>{this.state.user.skills}</h4>

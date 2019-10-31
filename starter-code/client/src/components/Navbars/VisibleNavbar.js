@@ -79,7 +79,7 @@ function VisibleNavbar() {
           </UncontrolledDropdown>
           <div className="navbar-translate">
             <Button 
-            href="/login" 
+            href="/" 
             target="_blank" 
             id="navbar-brand" 
             color="primary">
@@ -115,7 +115,7 @@ function VisibleNavbar() {
               </NavItem>
               <NavItem>
                 <NavLink 
-                href="/"
+                href="/Roister"
                 id="links">
                   About Us
                 </NavLink>
@@ -123,7 +123,7 @@ function VisibleNavbar() {
               </>
             : <><NavItem>
                 <NavLink
-                href="/login"
+                href="/"
                 id="links">
                   Logout
                 </NavLink>
@@ -137,7 +137,7 @@ function VisibleNavbar() {
               </NavItem>
               <NavItem>
                 <NavLink
-                href="/"
+                href="/Roister"
                 id="links">
                   About Us
                 </NavLink>

@@ -55,8 +55,9 @@ function ExamplesNavbar(props) {
       <Navbar className={`fixed-top ${navbarColor} ${props.className}`} color="info" expand="lg">
         <Container>
           <div className="navbar-translate">
-          <Link to="/Login">
+          <Link to="/">
             <Button 
+              onClick={handleLogout}
               target="_blank" 
               id="navbar-brand" 
               color="primary">
@@ -79,7 +80,7 @@ function ExamplesNavbar(props) {
               </NavLink>
             </NavItem>
             <NavItem>
-                <NavLink href="/">
+                <NavLink href="/Roister">
                   About Us
               </NavLink>
             </NavItem>
@@ -91,7 +92,7 @@ function ExamplesNavbar(props) {
               </>
             : <>
               <NavItem>
-              <NavLink href="/">
+              <NavLink href="/Roister">
                   About Us
                 </NavLink>
               </NavItem>
@@ -101,7 +102,7 @@ function ExamplesNavbar(props) {
                 </NavLink>
               </NavItem>
               <NavItem>
-              <NavLink href="/login">
+              <NavLink href="/">
                   Login
                 </NavLink>
               </NavItem>
