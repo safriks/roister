@@ -21,12 +21,12 @@ export default class Profile extends Component {
 
     state = {
           user: "",
-          projects:[],
+          projects:[]
         }
 
   componentDidMount(){
       instance({
-        url: `${process.env.REACT_APP_Server_API}/profile`,
+        url: `${process.env.REACT_APP_Server_API}/Profile`,
         method: "GET"
     })
     .then((response)=>{
@@ -42,16 +42,8 @@ render(){
     <>
     <ExamplesNavbar />
     <div className="wrapper">
-    <div
-        className="page-header clear-filter page-header-small"
-        filter-color="blue"
-      >
-        <div
-          className="page-header-image"
-          style={{
-            backgroundImage: "url(" + require("assets/img/alexander.jpg") + ")"
-          }}
-          
+      <div className="page-header clear-filter page-header-small" filter-color="blue">
+        <div className="page-header-image" style={{backgroundImage: "url(" + require("assets/img/alexander.jpg") + ")"}}
         ></div>
         <Container>
           <div>
@@ -124,23 +116,23 @@ render(){
                 <Col className="ml-auto mr-auto" md="10">
                   <Row className="collections">
                     <Col md="6">
-                    <a href="/createproject">
-                      <img
-                        alt="..."
-                        className="img-raised"
-                        src={require("assets/img/bg8-faded.png")}
-                      >
-                      </img>
+                      <a href="/createproject">
+                        <img
+                          alt="..."
+                          className="img-raised"
+                          src={require("assets/img/bg8-faded.png")}
+                        >
+                        </img>
                       </a>
                     </Col>
                     <Col md="6">
-                    <a href="/createproject">
-                      <img
-                        alt="..."
-                        className="img-raised"
-                        src={require("assets/img/bg7-faded.png")}
-                      >
-                      </img>
+                      <a href="/createproject">
+                        <img
+                          alt="..."
+                          className="img-raised"
+                          src={require("assets/img/bg7-faded.png")}
+                        >
+                        </img>
                       </a>
                     </Col>
                   </Row>

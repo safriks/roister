@@ -73,7 +73,7 @@ function ExamplesNavbar(props) {
             <>{user
             ? <>
               <NavItem>
-                <NavLink href="/profile">
+                <NavLink href="/Profile">
                   Profile
               </NavLink>
             </NavItem>

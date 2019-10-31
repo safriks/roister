@@ -4,7 +4,6 @@ import '../assets/css/now-ui-kit.css';
 import '../assets/css/now-ui-kit.css.map';
 import '../assets/css/now-ui-kit.min.css';
 import React, { Component } from 'react';
-import {getUser} from '../auth/auth'
 import instance from "../auth/customAxios";
 
 import {
@@ -16,22 +15,25 @@ import {
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 import ExamplesNavbar from './Navbars/ExamplesNavbar';
 import HeaderDescription from "./Headers/HeaderDescription";
+
 export default class CreateProject extends Component {
     constructor(props){
         super(props);
         this.state = {
-          name: '', 
-          location: '',
-          tagline: '', 
-          description: '', 
-          tags: '', 
-          financing: '', 
-          timing: '',
-          // team: '', 
-          picture: '',
-          userId: getUser()._id
+          name: "", 
+          location: "",
+          tagline: "", 
+          description: "", 
+          tags: "", 
+          financing: "", 
+          timing: "",
+          // team: "", 
+          picture: "",
+          user: "",
+          errorMessage:""
       }
         this.formRef = React.createRef();
+        this.handleInputUploadProject = this.handleInputUploadProject.bind(this);
         this.handleChangeProject = this.handleChangeProject.bind(this);
         this.handleSubmitProject = this.handleSubmitProject.bind(this);
     }
@@ -42,17 +44,9 @@ handleChangeProject(e){
     })
 }
 
-handleInputUpload(e){
-  const data = new FormData();
-    data.append('file', e.target.files[0]);
-    data.append('name', 'some value user types');
-    data.append('description', 'some value user types');
-    this.setState({picture: data})
-}
-
 handleSubmitProject(e){
-    e.preventDefault(); 
     var formData = new FormData(this.formRef.current);
+    e.preventDefault(); 
     instance({
         method: "POST",
         url: `${process.env.REACT_APP_Server_API}/createproject`,
@@ -63,11 +57,19 @@ handleSubmitProject(e){
 
     })
     .then((response)=> {
-        this.props.history.push("/profile")
+        this.props.history.push("/Profile")
     })
     .catch((error)=> {
         console.log(error)
     })
+}
+
+handleInputUploadProject(e){
+  const data = new FormData();
+    data.append('file', e.target.files[0]);
+    data.append('name', 'some value user types');
+    data.append('description', 'some value user types');
+    this.setState({picture: data})
 }
 
 render(){
@@ -146,7 +148,7 @@ render(){
                   <br></br>
                   <Button className="btn-round">
                   <Input 
-                    onChange={(e) => this.handleInputUpload(e)}  
+                    onChange={(e) => this.handleInputUploadProject(e)}  
                     placeholder="Upload a picture"  
                     type="file" 
                     required name="picture"
