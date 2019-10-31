@@ -65,7 +65,9 @@ app.use(cors(corsOptions))
 app.use('/auth', require('./routes/auth'));
 app.use('/', require('./routes/createproject'));
 require('./routes/forgotPassword')(app);
-app.use('/', require('./routes/profile'));
+app.use('/', require('./routes/Profile'));
+app.use('/', require('./routes/project'));
+
 
 module.exports = app;
 
