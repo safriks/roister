@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import instance from "../auth/customAxios";
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import {
     Nav,
@@ -63,9 +63,16 @@ render(){
           </div>
 
            <div class="right">   
-            <button href='https://www.facebook.com/' class="social-signin facebook">Follow me on Facebook</button>
+           <a href='https://www.facebook.com/'>
+            <button class="social-signin facebook">Follow me on Facebook</button>
+           </a>
+           
+           <a href="https://www.twitter.com">
             <button class="social-signin twitter">Follow me on Twitter</button>
+           </a>
+           <a href="https://aboutme.google.com/">
             <button class="social-signin google">Follow me on Google+</button>
+            </a>
           </div>
           </div>        
           <div className='profile-details-container'>
