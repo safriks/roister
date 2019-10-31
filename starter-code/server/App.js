@@ -67,12 +67,7 @@ app.use('/', require('./routes/createproject'));
 require('./routes/forgotPassword')(app);
 app.use('/', require('./routes/Profile'));
 app.use('/', require('./routes/project'));
-
-
-app.use((err, req, res, next)=> {
-  debugger
-  res.send(err)
-})
+app.use('/', require('./routes/search'));
 
 module.exports = app;
 
