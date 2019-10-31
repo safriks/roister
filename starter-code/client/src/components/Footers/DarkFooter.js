@@ -12,15 +12,7 @@ function DarkFooter() {
           <ul>
             <li>
               <a
-                href="https://www.creative-tim.com?ref=nukr-dark-footer"
-                target="_blank"
-              >
-                Creative Tim
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://presentation.creative-tim.com?ref=nukr-dark-footer"
+                href="/"
                 target="_blank"
               >
                 About Us
@@ -28,10 +20,16 @@ function DarkFooter() {
             </li>
             <li>
               <a
-                href="http://blog.creative-tim.com?ref=nukr-dark-footer"
+                href="/"
                 target="_blank"
-              >
-                Blog
+              >   Privacy & Terms            
+              </a>
+            </li>
+            <li>
+              <a
+                href="/"
+                target="_blank"
+              >  Made in 🇳🇱      
               </a>
             </li>
           </ul>
@@ -39,17 +37,17 @@ function DarkFooter() {
         <div className="copyright" id="copyright">
           © {new Date().getFullYear()}, Designed by{" "}
           <a
-            href="https://www.invisionapp.com?ref=nukr-dark-footer"
+            href="https://www.invisionapp.com?ref=nukr-transparent-footer"
             target="_blank"
           >
             Invision
           </a>
           . Coded by{" "}
           <a
-            href="https://www.creative-tim.com?ref=nukr-dark-footer"
+            href="https://github.com/safriks/roister"
             target="_blank"
           >
-            Creative Tim
+            Julieta Martinez-Rey & Ines Dimassi
           </a>
           .
         </div>

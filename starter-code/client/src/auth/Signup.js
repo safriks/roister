@@ -263,6 +263,7 @@ export default class Signup extends Component {
                             className='aboutme-input'
                             ></input>
                           </InputGroup>
+<<<<<<< HEAD
                           <Button className="btn-round">
                   <Input 
                     onChange={(e) => this.handleInputUploadProject(e)}  
@@ -271,6 +272,16 @@ export default class Signup extends Component {
                     required name="picture"
                   ></Input>
                   </Button>
+=======
+                          <Button>
+                          <Input 
+                            onChange={(e) => this.handleInputUpload(e)}  
+                            placeholder="Upload a picture"  
+                            type="file" 
+                            required name="picture"
+                          ></Input>
+                          </Button>
+>>>>>>> 498baedce64e935f42eb6308330f7be48e210cc5
                           </CardBody>
                           </div> 
                         </div>

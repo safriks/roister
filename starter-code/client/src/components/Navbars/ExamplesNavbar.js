@@ -73,18 +73,14 @@ function ExamplesNavbar(props) {
             <>{user
             ? <>
               <NavItem>
-                <NavLink href="/Profile">
+                <NavLink 
+                href="/Profile">
                   Profile
               </NavLink>
             </NavItem>
             <NavItem>
-                <NavLink href="/createproject">
-                  Create Project
-              </NavLink>
-            </NavItem>
-            <NavItem>
                 <NavLink href="/">
-                  About
+                  About Us
               </NavLink>
             </NavItem>
             <NavItem>
@@ -96,14 +92,20 @@ function ExamplesNavbar(props) {
             : <>
               <NavItem>
               <NavLink href="/">
-                  Contact
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/">
                   About Us
                 </NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink href="/signup">
+                  Sign up
+                </NavLink>
+              </NavItem>
+              <NavItem>
+              <NavLink href="/login">
+                  Login
+                </NavLink>
+              </NavItem>
+              <NavItem></NavItem>
               </>
             }</>
             </Nav>

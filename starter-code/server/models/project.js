@@ -12,6 +12,8 @@ const projectSchema = new Schema({
   // team: String, 
   picture: String,
   userId: {type: mongoose.Types.ObjectId, ref: "user"}, 
+}, {
+  timestamps: true
 });
 
 const Project = mongoose.model("Project", projectSchema);

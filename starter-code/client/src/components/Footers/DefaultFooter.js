@@ -20,7 +20,14 @@ function DefaultFooter() {
                 <a
                   href="/"
                   target="_blank"
-                >                 
+                >   Privacy & Terms            
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/"
+                  target="_blank"
+                >  Made in 🇳🇱      
                 </a>
               </li>
             </ul>

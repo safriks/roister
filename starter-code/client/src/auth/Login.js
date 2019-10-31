@@ -129,7 +129,7 @@ export default class Login extends Component {
                             <Link to={"/Send-reset"}                             
                                   className="link1"
                                 >
-                                  Forgot your password?
+                                  Forgot password?
                                 </Link>
                             </h6>
                           </div>
