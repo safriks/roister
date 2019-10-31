@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import instance from "../auth/customAxios";
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 import {
     Button,
@@ -50,7 +50,7 @@ render(){
           <div>
             <img className="photo-container" alt="..." src={this.state.user.picture}></img>
           </div>
-          <p className="title3">WELCOME {this.state.user.firstname}</p>
+          <p className="title3">Welcome {this.state.user.firstname}</p>
           <h3>{this.state.user.jobposition}</h3>
         </Container>
       </div>
@@ -65,9 +65,16 @@ render(){
           </div>
 
            <div class="right">   
-            <button href='https://www.facebook.com/' class="social-signin facebook">Follow me on Facebook</button>
+           <a href='https://www.facebook.com/'>
+            <button class="social-signin facebook">Follow me on Facebook</button>
+           </a>
+           
+           <a href="https://www.twitter.com">
             <button class="social-signin twitter">Follow me on Twitter</button>
+           </a>
+           <a href="https://aboutme.google.com/">
             <button class="social-signin google">Follow me on Google+</button>
+            </a>
           </div>
           </div>        
 

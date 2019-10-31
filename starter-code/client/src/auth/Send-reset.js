@@ -95,9 +95,7 @@ render() {
            <Container>
              <Col className="ml-auto mr-auto" md="4">
                <Card className="card-login card-plain">
-                 <form onSubmit={this.handleSubmit} className="form">
-                 <div className='contains-all'>         
-                   <div className='container-profile-1'>
+                 <form onSubmit={this.sendEmail} className="form">                 
                    <CardBody>
                        <InputGroup
                          className={
@@ -117,20 +115,16 @@ render() {
                             placeholder="Email"      
                          ></Input>
                         </InputGroup>
-                    </CardBody>
-                  </div>
-                </div>
-                     
-                <CardFooter className="text-center">
+                    </CardBody>               
                   <Button
                     onChange={this.handleChange('email')} 
-                    className="btn-round"
+                    className="btn-round2"
                     color="primary"
                     type= 'submit'
                     size="lg" >
                     Send Email
                   </Button>
-                </CardFooter>
+                
               </form>
               {showNullError && (
                   <div>

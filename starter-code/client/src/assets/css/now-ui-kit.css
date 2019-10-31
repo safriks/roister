@@ -1746,6 +1746,16 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     color: #e95e38;
     padding: 10px 22px; } 
 
+    .btn-round2 {
+      
+      color: #e95e38;
+      border-width: 1px;
+      border-radius: 30px !important;
+      padding: 11px 23px; }
+      .btn-round2[class*="btn-outline-"] {
+        color: #e95e38;
+        padding: 10px 22px; } 
+
 [class*="btn-outline-"] {
   border: 1px solid;
   padding: 10px 22px;
@@ -4009,6 +4019,19 @@ img {
       transition: 0.2s ease;
       cursor: pointer;
     }
+
+    .social-signin {
+      margin-bottom: 20px;
+      width: 520px;
+      height: 576px;
+      border: none;
+      border-radius: 2px;
+      color: #FFF;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
     
     button.social-signin:hover,
     button.social-signin:focus {
@@ -4022,6 +4045,10 @@ img {
     }
     
     button.social-signin.facebook {
+      background: #32508E;
+    }
+
+  .social-signin.facebook {
       background: #32508E;
     }
     

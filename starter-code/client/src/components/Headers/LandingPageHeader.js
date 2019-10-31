@@ -28,7 +28,7 @@ function Home() {
       <div className="page-header page-header-small">
         <div 
           className="page-header-image" 
-          style={{backgroundImage: "url(" + require("../../assets/img/bg8.jpg") + ")"}} 
+          style={{backgroundImage: "url(" + require("../../assets/img/suter.jpg") + ")"}} 
           ref={pageHeader}>
         </div>
           <div className="content-center">
