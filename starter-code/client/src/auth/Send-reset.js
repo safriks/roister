@@ -49,7 +49,7 @@ export default class Sendreset extends Component {
 
        } else{
           instance
-           .post('http://localhost:3001/forgotPassword', {
+           .post(`${process.env.REACT_APP_Server_API}/forgotPassword`, {
                email: this.state.email,
            })
 

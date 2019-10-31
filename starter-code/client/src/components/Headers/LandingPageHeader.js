@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useState} from "react";
+import instance from "../../auth/customAxios";
 
 import {
   Form,
@@ -8,6 +9,20 @@ import {
 
 function Home() {
   let pageHeader = React.createRef();
+  const [searchPhrase, setSearchPhrase] = useState("");
+  let test = undefined
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    instance
+    .get(`${process.env.REACT_APP_Server_API}/search?searchPhrase=${searchPhrase}`)
+    .then((response)=>{
+      test = response.data
+      debugger
+    })
+    .catch((err)=>{
+      debugger
+    })
+  }
 
   React.useEffect(() => {
     if (window.innerWidth > 991) {
@@ -39,12 +54,15 @@ function Home() {
                     <Form>
                       <input className="searchbar" 
                         type="text" 
+                        value={searchPhrase}
+                        onChange={e => setSearchPhrase(e.target.value)}
                         placeholder="Search for skills..." 
                         name="search">
                       </input>
                       <button 
                         className="searchbar-button" 
-                        type="submit">
+                        type="submit"
+                        onClick={handleSubmit}>
                         Search
                       </button>
                     </Form>
