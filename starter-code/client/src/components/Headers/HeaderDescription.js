@@ -10,8 +10,8 @@ import {
   Row,
   Col,
 } from "reactstrap";
-export default function HeaderDescription(props) {
 
+export default function HeaderDescription(props) {
     return (
         <div className="section section-about-us">
           <Container>
