@@ -85,33 +85,34 @@ export default class Signup extends Component {
         ></div>
       <div className="all">
               <div className="text-center">
-                <CardTitle className="title-up" tag="h3">Create your Profile</CardTitle>
+                <p className="title-up1" tag="h3">CREATE YOUR PROFILE</p>
               </div>
               <Container>
                 <Col className="ml-auto mr-auto" md="4">
                   <Card className="card-login card-plain">
                     <form onSubmit={this.handleSubmit} className="form" encType="multipart/form-data" ref={this.formRef}>
-                    <div className='contains-all'>         
-                      <div className='container-profile-1'>
+                    <div >         
+                      <div className='right1'>
                       <CardBody>
                         <InputGroup 
                           className={
                             "no-border input-lg" 
                           }
                         >
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="now-ui-icons users_circle-08"></i>
-                            </InputGroupText>
+                              <InputGroupAddon addonType="prepend">
+                              <InputGroupText>
+                                <i className="now-ui-icons users_circle-08"></i>
+                              </InputGroupText>
                             </InputGroupAddon>
-                          <Input 
-                          onChange={this.handleChange} 
-                          value={this.state.firstname} 
-                          placeholder="First Name" 
-                          type="text" 
-                          required name="firstname"
-                          ></Input>
+                            <Input 
+                            onChange={this.handleChange}
+                            value={this.state.firstname}
+                            placeholder="First Name"
+                            type="firstname"
+                            required name="firstname"
+                            ></Input>
                           </InputGroup>
+
                           <InputGroup
                             className={
                               "no-border input-lg"
@@ -130,6 +131,7 @@ export default class Signup extends Component {
                             required name="lastname"
                             ></Input>
                           </InputGroup>
+
                           <InputGroup
                             className={
                               "no-border input-lg"
@@ -148,6 +150,7 @@ export default class Signup extends Component {
                             required name="email"
                             ></Input>
                           </InputGroup>
+
                           <InputGroup
                             className={
                               "no-border input-lg"
@@ -166,12 +169,13 @@ export default class Signup extends Component {
                             required name="username"
                             ></Input>
                           </InputGroup>
+
                           <InputGroup
                             className={
                               "no-border input-lg"
                             }
                           >
-                            <InputGroupAddon addonType="prepend">
+                           <InputGroupAddon addonType="prepend">
                               <InputGroupText>
                                 <i className="now-ui-icons text_caps-small"></i>
                               </InputGroupText>
@@ -179,7 +183,7 @@ export default class Signup extends Component {
                             <Input 
                             onChange={this.handleChange}
                             value={this.state.password}
-                            placeholder="Password"
+                            placeholder="password"
                             type="password"
                             required name="password"
                             ></Input>
@@ -187,7 +191,8 @@ export default class Signup extends Component {
                           <InputGroup
                             className={
                               "no-border input-lg"
-                            } >                          
+                            }
+                          >                        
                             <InputGroupAddon addonType="prepend">
                               <InputGroupText>
                                 <i className="now-ui-icons objects_globe"></i>
@@ -203,7 +208,7 @@ export default class Signup extends Component {
                           </InputGroup>
                           </CardBody>
                           </div>
-                          <div className='container-profile-2'>
+                          <div className='left1'>
                           <CardBody>
                           <label>Skills</label>
                           <InputGroup
@@ -247,30 +252,31 @@ export default class Signup extends Component {
                               "no-border input-lg"
                             } >                         
                             <InputGroupAddon addonType="prepend">
-                              <InputGroupText>
-                                <i className="now-ui-icons education_glasses"></i>
-                              </InputGroupText>
+                          
                             </InputGroupAddon>                          
-                            <Input 
+                            <input 
                             onChange={this.handleChange}
                             value={this.state.aboutme}
-                            placeholder="About Me"
+                           
                             type="aboutme"
                             required name="aboutme"
-                            ></Input>
+                            className='aboutme-input'
+                            ></input>
                           </InputGroup>
-                          <Input 
-                            onChange={(e) => this.handleInputUpload(e)}  
-                            placeholder="Upload a picture"  
-                            type="file" 
-                            required name="picture"
-                          ></Input>
+                          <Button className="btn-round">
+                  <Input 
+                    onChange={(e) => this.handleInputUploadProject(e)}  
+                    placeholder="Upload a picture"  
+                    type="file" 
+                    required name="picture"
+                  ></Input>
+                  </Button>
                           </CardBody>
                           </div> 
                         </div>
-                        <CardFooter className="text-center">
-                        <Javascript errorMessage={this.state.errorMessage}/> 
-                          <div>
+                        <div className='orange-btn'>
+              <Javascript errorMessage={this.state.errorMessage}/> 
+                          <div className='text-center'>
                           <h6>
                               <Link to={"/Login"}
                                 className="link1"                        
@@ -279,13 +285,21 @@ export default class Signup extends Component {
                               </Link>
                             </h6>
                           </div>
-                        </CardFooter>
+                          </div>
                       </form>
+  
                     </Card>
+                    
                   </Col>
+               
+                        
+                  
                 </Container>
+                
               </div>
+              
             </div>
+
           </>
      )
   }

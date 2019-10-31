@@ -2478,8 +2478,8 @@ select,
 textarea {
   font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 400; }
+/* h1, h2, h3, h4, h5, h6 {
+  font-weight: 400; } */
 
 small {
   font-size: 60%; }
@@ -2533,6 +2533,26 @@ p {
   line-height: 1.61em;
   font-weight: 300;
   font-size: 1.2em; }
+
+.title1{
+  font-family: "Montserrat","Helvetica Neue",Arial,sans-serif;
+  font-size: 90px;
+  text-align: center;
+  margin-bottom: -15px;
+}
+
+.title3{
+  font-family: "Montserrat","Helvetica Neue",Arial,sans-serif;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.title-up1{
+  font-family: "Montserrat","Helvetica Neue",Arial,sans-serif;
+    font-size: 40px;
+    margin-bottom: -10px;
+}
 
 .title {
   font-weight: 700;
@@ -3188,6 +3208,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .roister-name{
+  font-family: "Montserrat","Helvetica Neue",Arial,sans-serif;
   font-size: 130px;
   margin-bottom: -25px;
   width: 100vw;
@@ -3223,7 +3244,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .input-space{
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .inputs-signin{
@@ -3868,6 +3889,45 @@ img {
       width: 300px;
       height: 400px;
     }
+
+   
+
+    .left1 {
+      position: relative;
+      /* top: 0; */
+      margin-top: -15px;
+      left: 30vh;
+      box-sizing: border-box;
+      padding: 40px;
+      width: 400px;
+      height: 500px;
+    }
+
+    .orange-btn{
+      margin-top: -50px;
+    }
+
+    .aboutme-input{
+      width: 800px;
+      height: 80px;
+      border-radius: 5px;
+      border-style: none;
+    }
+    
+    .right1{ 
+      position: absolute;
+      top: 0;
+      right: 30vh;
+      box-sizing: border-box;
+      padding: 40px;
+      width: 400px;
+      height: 500px;  
+  }
+
+    .container-profile-1{
+      position: absolute;
+      margin-right: 70vw;
+    }
     
     h1 {
       margin: 0 0 20px 0;
@@ -3875,7 +3935,7 @@ img {
       font-size: 28px;
     }
     
-    input[type="text"],
+    /* input[type="text"],
     input[type="password"] {
       display: block;
       box-sizing: border-box;
@@ -3889,7 +3949,7 @@ img {
       font-weight: 400;
       font-size: 15px;
       transition: 0.2s ease;
-    }
+    } */
     
     input[type="text"]:focus,
     input[type="password"]:focus {
@@ -3926,18 +3986,7 @@ img {
       transition: 0.1s ease;
     }
     
-    .or {
-      position: absolute;
-      top: 180px;
-      left: 280px;
-      width: 40px;
-      height: 40px;
-      background: #DDD;
-      border-radius: 50%;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-      line-height: 40px;
-      text-align: center;
-    }
+
     
     .right {
       position: absolute;
@@ -3946,20 +3995,6 @@ img {
       box-sizing: border-box;
       padding: 40px;
       width: 300px;
-      
-      height: 400px;
-      background: url('https://goo.gl/YbktSj');
-      background-size: cover;
-      background-position: center;
-      border-radius: 0 2px 2px 0;
-    }
-    
-    .right .loginwith {
-      display: block;
-      margin-bottom: 40px;
-      font-size: 28px;
-      color: #FFF;
-      text-align: center;
     }
     
     button.social-signin {
@@ -4001,8 +4036,6 @@ img {
     button.social-signin.messages {
       background: #f96332;
     }
-
-    
 
 .modal.modal-mini .modal-footer button {
   text-transform: uppercase; }
@@ -4362,7 +4395,7 @@ img {
   content: "";
   background-color: rgba(0, 0, 0, 0.5); }
 
-/* .login-page .card-login {
+ .login-page .card-login {
   border-radius: 0.25rem;
   padding-bottom: 0.7rem;
   max-width: 320px; }
@@ -4447,7 +4480,7 @@ img {
   .login-page .card-login.card-plain .input-group-text,
   .login-page .card-login.card-plain .form-group.no-border .input-group-text,
   .login-page .card-login.card-plain .input-group.no-border .input-group-text {
-    color: rgba(255, 255, 255, 0.8); } */
+    color: rgba(255, 255, 255, 0.8); } 
 
 .login-page .link {
   font-size: 10px;

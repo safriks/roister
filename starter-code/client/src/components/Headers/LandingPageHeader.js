@@ -33,7 +33,7 @@ function Home() {
         </div>
           <div className="content-center">
             <Container>
-              <h1 className="title">ABOUT ROISTER</h1>
+              <p className="title1">ABOUT ROISTER</p>
                 <p>Welcome to the world's most innovative network of entrepreneurs</p>
                   <NavItem id="searchbar">
                     <Form action="/action_page.php">

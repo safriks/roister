@@ -23,6 +23,7 @@ class App extends Component {
         <header>
             <Route exact path="/" component={LandingPage} />
             <Route exact path="/Login" component={Login} />
+            <Route exact path="/Profile" component={Profile} />
             <Route exact path="/Signup" component={Signup} />
             <Route exact path="/Project" component={Project} />
             <Route exact path="/Send-reset" component={Sendreset} />
