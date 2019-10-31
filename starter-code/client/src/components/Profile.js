@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import instance from "../auth/customAxios";
+// import {Link} from 'react-router-dom';
 
 import {
     Button,
@@ -64,7 +65,7 @@ render(){
           </div>
 
            <div class="right">   
-            <button class="social-signin facebook">Follow me on Facebook</button>
+            <button href='https://www.facebook.com/' class="social-signin facebook">Follow me on Facebook</button>
             <button class="social-signin twitter">Follow me on Twitter</button>
             <button class="social-signin google">Follow me on Google+</button>
           </div>
