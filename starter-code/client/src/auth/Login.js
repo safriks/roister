@@ -60,7 +60,7 @@ export default class Login extends Component {
       <>
       <ExamplesNavbar/>
         <div className="page-header clear-filter" filter-color="blue">
-          <div className="page-header-image" style={{backgroundImage: "url(" + require("assets/img/login.jpg") + ")"}}>
+          <div className="page-header-image" style={{backgroundImage: "url(" + require("assets/img/jose.jpg") + ")"}}>
           </div>
           <div className="all">
             <div>

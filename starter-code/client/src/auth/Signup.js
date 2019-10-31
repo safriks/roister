@@ -16,6 +16,7 @@ import {
   InputGroupAddon,
   InputGroupText,
   InputGroup,
+  Button,
   Container,
   Col,
   CardTitle,
@@ -111,7 +112,6 @@ export default class Signup extends Component {
                           required name="firstname"
                           ></Input>
                           </InputGroup>
-
                           <InputGroup
                             className={
                               "no-border input-lg"
@@ -287,6 +287,6 @@ export default class Signup extends Component {
               </div>
             </div>
           </>
-      )
+     )
   }
 }

@@ -7,6 +7,7 @@ import {
     TabPane,
     Container,
     Row,
+    Input,
     Col,
     UncontrolledTooltip
   } from "reactstrap";
@@ -65,7 +66,7 @@ render(){
               id="tooltip515203352"
               size="lg"
             >
-              <i className="fab fa-twitter"></i>
+            <i className="fab fa-twitter"></i>
             </Button>
             <UncontrolledTooltip delay={0} target="tooltip515203352">
               Follow me on Twitter
@@ -76,12 +77,24 @@ render(){
               id="tooltip340339231"
               size="lg"
             >
-              <i className="fab fa-instagram"></i>
+            <i className="fab fa-instagram"></i>
             </Button>
             <UncontrolledTooltip delay={0} target="tooltip340339231">
               Follow me on Instagram
             </UncontrolledTooltip>
-          </div>
+          </div>  
+          <h3 className="title">Location</h3>        
+          <h3 className="title">Skills</h3>        
+          <h3 className="title">About me</h3>         
+          <h3 className="title">Job Position</h3>
+          <Button className="btn-round">
+                  <Input 
+                    onChange={(e) => this.handleInputUpload(e)}  
+                    placeholder="Upload a picture"  
+                    type="file" 
+                    required name="picture"
+                  ></Input>
+                  </Button>         
             <h3 className="title">Location</h3>
             <h3 className="title">Skills</h3>
             <h3 className="title">About me</h3>
