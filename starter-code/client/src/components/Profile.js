@@ -120,17 +120,17 @@ render(){
                         <img
                           alt="..."
                           className="img-raised"
-                          src={require("assets/img/bg8-faded.png")}
+                          src={require("assets/img/create.png")}
                         >
                         </img>
                       </a>
                     </Col>
                     <Col md="6">
-                      <a href="/createproject">
+                      <a href="/project">
                         <img
                           alt="..."
                           className="img-raised"
-                          src={require("assets/img/bg7-faded.png")}
+                          src={require("assets/img/see.png")}
                         >
                         </img>
                       </a>

@@ -22,8 +22,14 @@ function TransparentFooter() {
               <a
                 href="/"
                 target="_blank"
-              >
-                Contact
+              >   Privacy & Terms            
+              </a>
+            </li>
+            <li>
+              <a
+                href="/"
+                target="_blank"
+              >  Made in 🇳🇱      
               </a>
             </li>
           </ul>

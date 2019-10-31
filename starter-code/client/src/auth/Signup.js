@@ -259,12 +259,14 @@ export default class Signup extends Component {
                             required name="aboutme"
                             ></Input>
                           </InputGroup>
+                          <Button>
                           <Input 
                             onChange={(e) => this.handleInputUpload(e)}  
                             placeholder="Upload a picture"  
                             type="file" 
                             required name="picture"
                           ></Input>
+                          </Button>
                           </CardBody>
                           </div> 
                         </div>

@@ -57,7 +57,7 @@ handleSubmitProject(e){
 
     })
     .then((response)=> {
-        this.props.history.push("/Profile")
+        this.props.history.push("/project")
     })
     .catch((error)=> {
         console.log(error)
