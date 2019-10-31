@@ -58,7 +58,7 @@ export const logout = function(){
         })
         .then((response)=> {
             localStorage.removeItem('user');
-            history.push('/Login')
+            history.push('/')
             history.go(0)
         })
         .catch(err => console.log(err))

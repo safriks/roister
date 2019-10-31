@@ -3,13 +3,11 @@ import instance from "../auth/customAxios";
 // import {Link} from 'react-router-dom';
 
 import {
-    Button,
     Nav,
     TabPane,
     Container,
     Row,
     Col,
-    UncontrolledTooltip
   } from "reactstrap";
 
  import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
@@ -50,7 +48,7 @@ render(){
           <div>
             <img className="photo-container" alt="..." src={this.state.user.picture}></img>
           </div>
-          <p className="title3">WELCOME {this.state.user.firstname}</p>
+          <p className="title3">Welcome {this.state.user.firstname}</p>
           <h3>{this.state.user.jobposition}</h3>
         </Container>
       </div>
@@ -70,9 +68,8 @@ render(){
             <button class="social-signin google">Follow me on Google+</button>
           </div>
           </div>        
-
           <div className='profile-details-container'>
-          <h4 className='title text-center'>Location</h4>
+          <h4 className='title text-center'>Location </h4>
           <h4>{this.state.user.location}</h4>
           <h4 className='title text-center'>Skills</h4>
           <h4>{this.state.user.skills}</h4>

@@ -5,7 +5,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 
 router.post('/createproject', uploadCloud.single('picture'), function (req, res) {
-    
+    debugger
     console.log(req.session.user)
       Project.create({
           name: req.body.name, 

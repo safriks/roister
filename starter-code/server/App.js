@@ -69,6 +69,11 @@ app.use('/', require('./routes/Profile'));
 app.use('/', require('./routes/project'));
 
 
+app.use((err, req, res, next)=> {
+  debugger
+  res.send(err)
+})
+
 module.exports = app;
 
 app.listen(3001, ()=>{console.log(`App is listening on port 3001`)});

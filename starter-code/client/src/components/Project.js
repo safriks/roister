@@ -14,9 +14,7 @@ import {
     Col,
   } from "reactstrap";
 
-import DefaultFooter from "components/Footers/DefaultFooter.js";
 import ExamplesNavbar from './Navbars/ExamplesNavbar';
-import HeaderDescription from "./Headers/HeaderDescription";
 
 export default class Project extends Component {
     constructor(props){
@@ -43,6 +41,23 @@ export default class Project extends Component {
     }  
     
     render() {
+        let projectInfo= this.state.projects.map(project => {
+            return (
+            <div className="section section-team text-center">
+                <>
+                    <h3>{project.name}</h3>
+                    <h3>{project.location}</h3>
+                    <h3>{project.tagline}</h3>
+                    <h3>{project.description}</h3>
+                    <h3>{project.tags}</h3>
+                    <h3>{project.financing}</h3>
+                    <h3>{project.timing}</h3>
+                    <h3>{project.team}</h3>
+                    <img src={project.picture}/>
+                </>
+            </div>
+            )
+        })
         return (
             <>
             <ExamplesNavbar navLinksBlack={true} className="text-black" />
@@ -85,24 +100,13 @@ export default class Project extends Component {
                                         }}
                                     >
                                     </div>
+                                    
                                 </Col>
                             </Row>
                         </div>
+                    {projectInfo}
                 </Container>
                 </div>
-                <div className="section section-team text-center">
-                            <>
-                                <h3>{this.state.projects.name}</h3>
-                                <h3>{this.state.projects.location}</h3>
-                                <h3>{this.state.projects.tagline}</h3>
-                                <h3>{this.state.projects.description}</h3>
-                                <h3>{this.state.projects.tags}</h3>
-                                <h3>{this.state.projects.financing}</h3>
-                                <h3>{this.state.projects.timing}</h3>
-                                <h3>{this.state.projects.team}</h3>
-                                <img src={this.state.projects.picture}/>
-                            </>
-                    </div>
                 </div>
             </> 
         )
