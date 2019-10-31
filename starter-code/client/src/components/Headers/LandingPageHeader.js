@@ -36,10 +36,10 @@ function Home() {
               <p className="title1">ABOUT ROISTER</p>
                 <p>Welcome to the world's most innovative network of entrepreneurs</p>
                   <NavItem id="searchbar">
-                    <Form action="/action_page.php">
+                    <Form>
                       <input className="searchbar" 
                         type="text" 
-                        placeholder="Skills or projects..." 
+                        placeholder="Search for skills..." 
                         name="search">
                       </input>
                       <button 

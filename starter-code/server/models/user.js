@@ -16,6 +16,7 @@ const userSchema = new Schema({
   timestamps: true
 });
 
+userSchema.index({skills:'text'});
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;

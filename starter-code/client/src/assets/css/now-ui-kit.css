@@ -6332,3 +6332,7 @@ td.rdtYear:hover {
   box-shadow: none; 
   padding: 10px 20px 10px 20px; 
 }
+
+html {
+  scroll-behavior: smooth;
+}

@@ -11,7 +11,6 @@ import {signup} from "./auth";
 import {
   Card,
   CardBody,
-  CardFooter,
   Input,
   InputGroupAddon,
   InputGroupText,
@@ -19,7 +18,6 @@ import {
   Button,
   Container,
   Col,
-  CardTitle,
 } from "reactstrap";
 
 import ExamplesNavbar from "../components/Navbars/ExamplesNavbar.js";
