@@ -1756,6 +1756,32 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
         color: #e95e38;
         padding: 10px 22px; } 
 
+
+
+        #search-result{
+          background-color: #e95e38;
+          margin-top: 10px;
+          width: 150px; 
+          margin-left: 120px;
+          
+          border-radius: 10px;
+          
+          height: 35px;
+           
+          align-items: center;
+          
+        }
+
+        #unique-result{
+          color: white;
+          font-size: 20px;
+          text-align: center;
+        }
+
+
+  
+
+
 [class*="btn-outline-"] {
   border: 1px solid;
   padding: 10px 22px;
@@ -4032,6 +4058,8 @@ img {
       transition: 0.2s ease;
       cursor: pointer;
     }
+
+
     
     button.social-signin:hover,
     button.social-signin:focus {

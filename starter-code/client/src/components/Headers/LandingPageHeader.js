@@ -37,10 +37,8 @@ function Home() {
     .get(`${process.env.REACT_APP_Server_API}/search?searchPhrase=${state.searchPhrase}`)
     .then((response)=>{
       updateResult(response.data)
-      debugger
     })
-    .catch((err)=>{
-      debugger
+    .catch((err)=>{ 
     })
   }
 
@@ -88,7 +86,11 @@ function Home() {
                       </button>
                       {state.result ? 
                       <>{state.result.map(currentValue => {
-                          return (<Link to={`/profile/${currentValue._id}`}>{currentValue.firstname}</Link>)}
+                          return (                          
+                            <div id="search-result">
+                            <Link id='unique-result' to={`/profile/${currentValue._id}`}>{currentValue.firstname}</Link>
+                            </div>                          
+                            )}
                       )} </> 
                       : null}
                     </Form>
