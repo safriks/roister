@@ -5,6 +5,7 @@ import '../assets/css/now-ui-kit.css.map';
 import '../assets/css/now-ui-kit.min.css';
 import React, { Component } from 'react'
 import instance from "../auth/customAxios";
+import {Link} from 'react-router-dom';
 
 import {
     Input,
@@ -43,19 +44,32 @@ export default class Project extends Component {
     render() {
         let projectInfo= this.state.projects.map(project => {
             return (
-            <div className="section section-team text-center">
-                <>
-                    <h3>{project.name}</h3>
-                    <h3>{project.location}</h3>
-                    <h3>{project.tagline}</h3>
-                    <h3>{project.description}</h3>
-                    <h3>{project.tags}</h3>
-                    <h3>{project.financing}</h3>
-                    <h3>{project.timing}</h3>
-                    <h3>{project.team}</h3>
-                    <img src={project.picture}/>
-                </>
-            </div>
+            <section id="section1">
+                <div className="section section-team text-center">
+                    <div className="team">
+                        <Row>
+                            <Col>
+                            <div className="team-player">
+                                    <img
+                                        alt="project-picture"
+                                        className="rounded-circle imageSize img-fluid img-raised"
+                                        src={project.picture}
+                                    ></img>
+                                    <h4 className="title">{project.name}</h4>
+                                    <p className="category text-info">{project.location}</p>
+                                    <p className="category text-primary">{project.tags}</p>
+                                    <p>{project.tagline}</p>
+                                    <p className="description">"{project.description}"</p>
+                                    <div className="project-styling">
+                                        <p className="pTag-project description">💸 {project.financing} </p>
+                                        <p className="pTag-project description">🕗 {project.timing}</p>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Row>
+                    </div>
+                </div>
+            </section>
             )
         })
         return (
@@ -71,7 +85,11 @@ export default class Project extends Component {
                             Here is the place where you can find all the projects you have created. 
                             Members of Roister can look at your projects, so provide as much description as possible.
                             </h5>
-                            <h5>👋</h5>
+                            <a className="scroll-down"
+                                href="#section1">
+                                <span></span>
+                                ⬇️
+                            </a>
                     </Col>
                     </Row>
                         <div className="separator separator-primary"></div>
@@ -100,7 +118,6 @@ export default class Project extends Component {
                                         }}
                                     >
                                     </div>
-                                    
                                 </Col>
                             </Row>
                         </div>
