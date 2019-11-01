@@ -1,6 +1,7 @@
 import React from "react";
 import {getUser, logout} from "../../auth/auth";
 import {Link} from "react-router-dom";
+
 import {
   Collapse,
   Button,
@@ -75,7 +76,7 @@ function ExamplesNavbar(props) {
             ? <>
               <NavItem>
                 <NavLink 
-                href="/Profile">
+                href={`/Profile/${user._id}`}>
                   Profile
               </NavLink>
             </NavItem>
@@ -85,7 +86,8 @@ function ExamplesNavbar(props) {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink onClick={()=> handleLogout()}>
+              <NavLink 
+              onClick={()=> handleLogout()}>
                 Logout
               </NavLink>
             </NavItem>
