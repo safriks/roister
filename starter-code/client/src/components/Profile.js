@@ -25,7 +25,7 @@ export default class Profile extends Component {
 
   componentDidMount(){
       instance({
-        url: `${process.env.REACT_APP_Server_API}/Profile`,
+        url: `${process.env.REACT_APP_Server_API}/Profile/${this.props.match.params.userId}`,
         method: "GET"
     })
     .then((response)=>{

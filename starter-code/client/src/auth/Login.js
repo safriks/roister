@@ -48,7 +48,7 @@ export default class Login extends Component {
       e.preventDefault();
       login(this.state)
         .then((response)=> {
-          this.props.history.push("/Profile");
+          this.props.history.push(`/Profile/${response.data._id}`);
         })
         .catch((error)=> {
           this.setState({errorMessage: error.response.data});

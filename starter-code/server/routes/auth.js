@@ -6,7 +6,6 @@ const uploadCloud = require('../config/cloudinary.js');
 const mongoose = require("mongoose");
 
 router.post("/signup", uploadCloud.single('picture'), function (req,res) {
-    debugger
     User.findOne({$or: [{username: req.body.username, email: req.body.email}]})
         .then((user)=> {
             if(user) res.send("Email or username is already taken")

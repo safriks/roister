@@ -4,10 +4,10 @@ const User= require("../models/user");
 const router = express.Router();
 const mongoose = require("mongoose");
 
-router.get('/Profile', function (req, res) {
-    User.findById(req.session.user._id)
+router.get('/Profile/:userId', function (req, res) {
+    User.findById(req.params.userId)
     .then((user)=>{
-        Project.find({userId: req.session.user._id})
+        Project.find({userId: req.params.userId})
         .then((projects)=>{
             res.json({
                 user: user,

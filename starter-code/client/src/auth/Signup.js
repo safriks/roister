@@ -55,7 +55,7 @@ export default class Signup extends Component {
     e.preventDefault();
     signup(formData)
       .then((response)=> {
-        this.props.history.push("/Roister");
+        this.props.history.push(`/Profile/${response.data.user._id}`);
       })
       .catch((error)=> {
         this.setState({errorMessage: error.response.data});

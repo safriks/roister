@@ -1,22 +1,42 @@
 import React, {useState} from "react";
 import instance from "../../auth/customAxios";
+import {Link} from 'react-router-dom';
 
 import {
   Form,
   NavItem,
   Container,
 } from "reactstrap";
+import { strictEqual } from "assert";
 
 function Home() {
   let pageHeader = React.createRef();
-  const [searchPhrase, setSearchPhrase] = useState("");
-  let test = undefined
+
+  const [state, setSearchPhrase] = useState({
+    searchPhrase: '',
+    result: ''
+  });
+
+  const updateSearchPhrase = e => {
+    setSearchPhrase({
+      ...state,
+      [e.target.name]: e.target.value
+    });
+  }
+
+  const updateResult = result => {
+    setSearchPhrase({
+      ...state,
+      result: result
+    });
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     instance
-    .get(`${process.env.REACT_APP_Server_API}/search?searchPhrase=${searchPhrase}`)
+    .get(`${process.env.REACT_APP_Server_API}/search?searchPhrase=${state.searchPhrase}`)
     .then((response)=>{
-      test = response.data
+      updateResult(response.data)
       debugger
     })
     .catch((err)=>{
@@ -41,6 +61,7 @@ function Home() {
   return (
     <>
       <div className="page-header page-header-small" >
+     
         <div 
           className="page-header-image" 
           style={{backgroundImage: "url(" + require("../../assets/img/simone.jpg") + ")"}} 
@@ -54,10 +75,10 @@ function Home() {
                     <Form>
                       <input className="searchbar" 
                         type="text" 
-                        value={searchPhrase}
-                        onChange={e => setSearchPhrase(e.target.value)}
+                        value={state.searchPhrase}
+                        onChange={e => updateSearchPhrase(e)}
                         placeholder="Search for skills..." 
-                        name="search">
+                        name="searchPhrase">
                       </input>
                       <button 
                         className="searchbar-button" 
@@ -65,6 +86,11 @@ function Home() {
                         onClick={handleSubmit}>
                         Search
                       </button>
+                      {state.result ? 
+                      <>{state.result.map(currentValue => {
+                          return (<Link to={`/profile/${currentValue._id}`}>{currentValue.firstname}</Link>)}
+                      )} </> 
+                      : null}
                     </Form>
                   </NavItem>
                 <br></br>

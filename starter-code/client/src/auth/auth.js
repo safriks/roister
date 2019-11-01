@@ -21,6 +21,7 @@ export const login = function({username, password}) {
         })
         .then((response)=> {
             setUser(response.data)
+            return response
         })
     } 
 
