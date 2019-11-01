@@ -6336,3 +6336,33 @@ td.rdtYear:hover {
 html {
   scroll-behavior: smooth;
 }
+
+.scroll-down{
+  text-decoration: none !important;
+  text-align: center;
+  display: inline-block;
+  font-size: 30px;
+}
+
+.scroll-down:hover
+  {
+    text-decoration:none;
+    cursor:pointer;
+   }
+
+.project-styling{
+  display: flex;
+  box-sizing: border-box;
+  direction: column;
+  justify-content: center;
+  width: auto;
+}
+
+.imageSize{
+  width: 200px;
+  height: 200px;
+}
+
+.pTag-project{
+  margin-right:20px;
+}
