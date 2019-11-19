@@ -27,7 +27,6 @@ function TransparentFooter() {
             </li>
             <li>
               <a
-                href="/"
                 target="_blank"
               >  Made in 🇳🇱      
               </a>

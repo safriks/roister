@@ -87,8 +87,7 @@ export default class Project extends Component {
                             </h5>
                             <a className="scroll-down"
                                 href="#section1">
-                                <span></span>
-                                ⬇️
+                                <span>⬇️</span>
                             </a>
                     </Col>
                     </Row>
@@ -104,7 +103,7 @@ export default class Project extends Component {
                                         className="image-container image-left"
                                         style={{
                                         backgroundImage:
-                                            "url(" + require(`../assets/img/Roister-small.png`) + ")"
+                                            "url(" + require(`../assets/img/unsplash.jpg`) + ")"
                                         }}
                                     >
                                     </div>
@@ -114,7 +113,7 @@ export default class Project extends Component {
                                         className="image-container image-right"
                                         style={{
                                         backgroundImage:
-                                            "url(" + require("../assets/img/cafe.jpg") + ")"
+                                            "url(" + require("../assets/img/Roister-small.png") + ")"
                                         }}
                                     >
                                     </div>

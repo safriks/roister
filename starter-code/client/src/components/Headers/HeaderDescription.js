@@ -28,7 +28,7 @@ export default function HeaderDescription(props) {
                     className="image-container image-left"
                     style={{
                       backgroundImage:
-                        "url(" + require(`../../assets/img/group-working.jpg`) + ")"
+                        "url(" + require('../../assets/img/cafe.jpg') + ")"
                     }}
                   >
                   </div>
@@ -38,7 +38,7 @@ export default function HeaderDescription(props) {
                     className="image-container image-right"
                     style={{
                       backgroundImage:
-                        "url(" + require("../../assets/img/cafe.jpg") + ")"
+                        "url(" + require("../../assets/img/group-working.jpg") + ")"
                     }}
                   >
                   </div>

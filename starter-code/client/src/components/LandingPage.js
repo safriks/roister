@@ -57,7 +57,7 @@ function LandingPage() {
                     className="image-container image-left"
                     style={{
                       backgroundImage:
-                        "url(" + require("../assets/img/cafe.jpg") + ")"
+                        "url(" + require("../assets/img/brainstorming.jpg") + ")"
                     }}
                   >
                     <p className="blockquote blockquote-info">
@@ -72,7 +72,7 @@ function LandingPage() {
                     className="image-container image-right"
                     style={{
                       backgroundImage:
-                        "url(" + require("../assets/img/group-working.jpg") + ")"
+                        "url(" + require("../assets/img/marvin.jpg") + ")"
                     }}
                   ></div>
                   <h3>
@@ -114,7 +114,7 @@ function LandingPage() {
                     <img
                       alt="..."
                       className="rounded-circle img-fluid img-raised"
-                      src={require("../assets/img/Aleks.png")}
+                      src={require("../assets/img/Aleks.jpeg")}
                     ></img>
                     <h4 className="title">Aleks Safronovs</h4>
                     <p className="category text-info">Co-Founder</p>

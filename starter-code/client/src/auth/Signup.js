@@ -84,6 +84,7 @@ export default class Signup extends Component {
       <div className="all">
               <div className="text-center">
                 <p className="title-up1" tag="h3">CREATE YOUR PROFILE</p>
+                <p className='roister-para'>Enter the world's most innovative network of entrepreneurs</p>
               </div>
               <Container>
                 <Col className="ml-auto mr-auto" md="4">

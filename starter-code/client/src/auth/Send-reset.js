@@ -89,8 +89,12 @@ render() {
      ></div>
    <div className="all">
            <div className="text-center">
-             <CardTitle className="title-up" tag="h3">Reset your Password</CardTitle>
-             <h4 className='enter-text'>Enter your email address and a link to reset your password will be sended to you.</h4>
+            <p className="title-up1" tag="h3">
+              RESET YOUR PASSWORD
+            </p>
+            <p className='roister-para'>
+              Enter your email address and a link to reset your password will be sent.
+            </p>
            </div>
            <Container>
              <Col className="ml-auto mr-auto" md="4">
@@ -121,7 +125,8 @@ render() {
                     className="btn-round2"
                     color="primary"
                     type= 'submit'
-                    size="lg" >
+                    size="lg" 
+                    >
                     Send Email
                   </Button>
                 

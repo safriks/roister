@@ -42,8 +42,11 @@ render(){
     <ExamplesNavbar />
     <div className="wrapper">
       <div className="page-header clear-filter page-header-small" filter-color="blue">
-        <div className="page-header-image" style={{backgroundImage: "url(" + require("assets/img/simone.jpg") + ")"}}
-        ></div>
+        <div 
+          className="page-header-image" 
+          style={{backgroundImage: "url(" + require("assets/img/henry.jpg") + ")"}}
+        >
+        </div>
         <Container>
           <div>
             <img className="photo-container" alt="..." src={this.state.user.picture}></img>

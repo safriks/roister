@@ -58,11 +58,10 @@ function Home() {
 
   return (
     <>
-      <div className="page-header page-header-small" >
-     
+      <div className="page-header clear-filter page-header-small" filter-color="blue">
         <div 
           className="page-header-image" 
-          style={{backgroundImage: "url(" + require("../../assets/img/simone.jpg") + ")"}} 
+          style={{backgroundImage: "url(" + require("../../assets/img/henry.jpg") + ")"}} 
           ref={pageHeader}>
         </div>
           <div className="content-center">

@@ -86,7 +86,12 @@ render(){
               a ferocious business tycoon, photographer or a visual artist. 
               </h5>
             <h5>There is always someone looking for your expertise.</h5>
+            <a className="scroll-down"
+              href="#section1">
+              <span>⬇️</span>
+            </a>  
         </HeaderDescription>
+        <section id="section1">
           <div className="section section-team text-center">
             <h3>Fill in the form</h3>
               <Container>
@@ -166,6 +171,7 @@ render(){
                 </form>
               </Container>
             </div>
+          </section>
         </div>
       <DefaultFooter />
     </>
